@@ -1,4 +1,5 @@
 import { data } from "src/data";
+import { Calendar } from "components/Calendar";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       </h1>
       {data.loggedInUser.name}
       <img src={data.tasks[0].imageUrl} alt="" />
+      <Calendar />
     </>
   );
 }

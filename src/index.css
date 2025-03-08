@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 @import "tailwindcss";
-
+@import "react-day-picker/dist/style.css";
 
 @theme {
   --color-primary-900: #10197a;
@@ -13,7 +13,7 @@
   --color-primary-200: #bac8ff;
   --color-primary-100: #dce4ff;
   --color-primary-0: #ffffff;
-  
+
   --color-success-900: #3b6506;
   --color-success-800: #4c7a0b;
   --color-success-700: #659711;
@@ -23,7 +23,7 @@
   --color-success-300: #d3f178;
   --color-success-200: #e8faa6;
   --color-success-100: #f5fcd2;
-  
+
   --color-error-900: #7a0619;
   --color-error-800: #930b16;
   --color-error-700: #b71112;
@@ -33,7 +33,7 @@
   --color-error-300: #ffa37a;
   --color-error-200: #ffc8a6;
   --color-error-100: #ffe7d3;
-  
+
   --color-warning-900: #7a4d0b;
   --color-warning-800: #936312;
   --color-warning-700: #b7821d;
@@ -43,7 +43,7 @@
   --color-warning-300: #ffe488;
   --color-warning-200: #ffefb0;
   --color-warning-100: #fff8d7;
-  
+
   --color-info-900: #102e7a;
   --color-info-800: #1a4393;
   --color-info-700: #2a60b7;
@@ -53,7 +53,7 @@
   --color-info-300: #98d3ff;
   --color-info-200: #bae5ff;
   --color-info-100: #dcf3ff;
-  
+
   --color-secondary-900: #030410;
   --color-secondary-800: #060713;
   --color-secondary-700: #0a0a18;
@@ -64,5 +64,40 @@
   --color-secondary-200: #c2c6e8;
   --color-secondary-100: #dfe1f3;
 
-  --font-jakarta: "Plus Jakarta Sans", sans-serif; 
+  --color-n-1: #f5f5f7;
+
+  --font-jakarta: "Plus Jakarta Sans", sans-serif;
+}
+
+/* Calendar component from daypicker */
+.rdp-root {
+  --rdp-day-height: 42px;
+  --rdp-day-width: 42px;
+  --rdp-day_button-height: 32px;
+  --rdp-day_button-width: 32px;
+  --rdp-weekday-opacity: 1;
+}
+
+.rdp-month_caption {
+  align-items: center;
+}
+.rdp-day .rdp-day_button {
+  font-size: 12px;
+  font-weight: 600;
+  background-color: var(--color-n-1);
+  border-color: var(--color-n-1);
+}
+.rdp-selected .rdp-day_button {
+  font-size: 12px;
+  font-weight: 600;
+  background-color: var(--color-primary-500);
+  border-color: var(--color-primary-500);
+  color: var(--color-primary-0);
+}
+.rdp-chevron {
+  fill: var(--color-secondary-400);
+}
+.rdp-weekday {
+  font-size: 12px;
+  color: var(--color-secondary-500);
 }
