@@ -1,5 +1,5 @@
 import { data } from "src/data";
-import RunningTask from "./components/cards/RunningTask";
+import RunningTask from "./components/RunningTask";
 import { Calendar } from "./components/Calendar";
 
 function App() {
