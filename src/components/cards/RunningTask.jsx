@@ -5,7 +5,7 @@ import RunningTaskProgressBar from './RunningTaskProgressBar'
 const RunningTask = () => {
   const [progress, setProgress] = useState(45);
   return (
-    <div className='w-[327px] h-[124px] sm:w-[200px] sm:h-[220px] flex sm:flex-col justify-between shadow-xl p-4 bg-secondary-900 text-white rounded-[10px] transition duration-500' >
+    <div className='m-4 w-[327px] h-[124px] sm:w-[200px] sm:h-[220px] flex sm:flex-col justify-between shadow-xl p-4 bg-secondary-900 text-white rounded-[10px] transition duration-500' >
 
       <div className='flex flex-col gap-[18px]'>
         <h1 className='text-[16px] font-semibold text-primary-0 '>Running Task</h1>

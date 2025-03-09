@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 @import "tailwindcss";
+@import "react-day-picker/dist/style.css";
 
 @theme {
   --color-primary-900: #10197a;
@@ -63,12 +64,40 @@
   --color-secondary-200: #c2c6e8;
   --color-secondary-100: #dfe1f3;
 
+  --color-n-1: #f5f5f7;
+
   --font-jakarta: "Plus Jakarta Sans", sans-serif;
 }
 
-@layer base {
-  body {
-    font-family: var(--font-jakarta);
-    padding: 5px;
-  }
+/* Calendar component from daypicker */
+.rdp-root {
+  --rdp-day-height: 42px;
+  --rdp-day-width: 42px;
+  --rdp-day_button-height: 32px;
+  --rdp-day_button-width: 32px;
+  --rdp-weekday-opacity: 1;
+}
+
+.rdp-month_caption {
+  align-items: center;
+}
+.rdp-day .rdp-day_button {
+  font-size: 12px;
+  font-weight: 600;
+  background-color: var(--color-n-1);
+  border-color: var(--color-n-1);
+}
+.rdp-selected .rdp-day_button {
+  font-size: 12px;
+  font-weight: 600;
+  background-color: var(--color-primary-500);
+  border-color: var(--color-primary-500);
+  color: var(--color-primary-0);
+}
+.rdp-chevron {
+  fill: var(--color-secondary-400);
+}
+.rdp-weekday {
+  font-size: 12px;
+  color: var(--color-secondary-500);
 }
