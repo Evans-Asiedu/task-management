@@ -6,7 +6,7 @@ import Header from "./Header";
 const TodayTask = () => {
   return (
     <div className="bg-white w-80 rounded-xl shadow-lg p-4">
-      <Header name="Today Task" icon="..." />
+      <Header name="Today Task" />
       <TaskCard />
       <TaskDetails />
     </div>
