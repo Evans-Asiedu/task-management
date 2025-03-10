@@ -1,12 +1,6 @@
 export function TaskCard() {
   return (
-    <div className="bg-white w-80 rounded-xl shadow-lg p-4">
-      {/* Header */}
-      <div className="flex justify-between items-center mb-3">
-        <h2 className="text-lg font-semibold">Task Today</h2>
-        <button className="text-gray-500 text-lg">⋯</button>
-      </div>
-
+    <div className="bg-white rounded-xl shadow-sm p-4">
       {/* Image Section */}
       <img
         src="/Image.png"
