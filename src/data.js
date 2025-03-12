@@ -39,9 +39,9 @@ export const data = {
     ],
     "navigation":
       [
-        { "title": "Overview", "icon": "home", "path": "/overview" },
-        { "title": "Taks", "icon": "task", "path": "/tasks" },
-        { "title": "Settings", "icon": "settings", "path": "/settings" }
+        { title: "Overview", icon: "fa-home", path: "/overview" },
+        { title: "Tasks", icon: "fa-tasks", path: "/tasks" },
+        { title: "Settings", icon: "fa-cog", path: "/settings" },
       ],
     "tasks": [
       {

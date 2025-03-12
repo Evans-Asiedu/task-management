@@ -1,13 +1,6 @@
 import { useState } from "react";
+import { data } from "src/data";
 // import { useLocation } from "react-router-dom";
-
-const data = {
-  navigation: [
-    { title: "Overview", icon: "fa-home", path: "/overview" },
-    { title: "Tasks", icon: "fa-tasks", path: "/tasks" },
-    { title: "Settings", icon: "fa-cog", path: "/settings" },
-  ],
-};
 
 export default function SideMenu() {
   const [isOpen, setIsOpen] = useState(false);
