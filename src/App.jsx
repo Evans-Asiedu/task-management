@@ -1,12 +1,15 @@
 import { data } from "src/data";
-import RunningTask from "./components/RunningTask";
-import { Calendar } from "./components/Calendar";
+import { useState } from "react";
+import RunningTask from "components/RunningTask";
+import { Calendar } from "components/Calendar";
 
-import TodayTask from "./components/TodayTask";
+import TodayTask from "components/TodayTask";
+import SideMenu from "components/SideMenu";
 
 function App() {
   return (
     <>
+      <SideMenu />
       <Calendar />
       <RunningTask />
       <TodayTask />
