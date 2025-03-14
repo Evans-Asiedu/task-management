@@ -5,19 +5,21 @@ import { Calendar } from "components/Calendar";
 
 import TodayTask from "components/TodayTask";
 import SideMenu from "components/SideMenu";
+import UpcomingTask from "./components/UpcomingTask";
 
 function App() {
   return (
     <>
       <div className="container mx-auto max-w-[1440px] ">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
-          <div className="lg:col-span-2">
+        <div className="flex flex-col lg:flex-row gap-0">
+          <div className="w-full lg:w-270/1440 bg-white lg:col-span-2 max-w-[252px]">
             <SideMenu />
           </div>
-          <div className="lg:col-span-7 px-4">
+          <div className="w-full bg-light-gray">
             <RunningTask />
+            <UpcomingTask />
           </div>
-          <div className="lg:col-span-3">
+          <div className="w-full lg:w-436/1440 mx-4">
             <Calendar />
             <TodayTask />
           </div>
