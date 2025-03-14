@@ -12,7 +12,7 @@ function App() {
     <>
       <div className="container mx-auto max-w-[1440px] ">
         <div className="flex flex-col lg:flex-row gap-0">
-          <div className="w-full lg:w-270/1440 bg-white lg:col-span-2 max-w-[252px]">
+          <div className="w-full lg:w-270/1440 bg-white">
             <SideMenu />
           </div>
           <div className="w-full bg-light-gray">
