@@ -15,10 +15,10 @@ export default function SideMenu() {
 
       {/* Hamburger Icon */}
       <button
-        className="md:hidden p-3 text-primary-300 bg-white fixed top-4 left-4 z-40 rounded-full border border-primary-300"
+        className="md:hidden text-primary-300 bg-white fixed top-4 left-4 z-40 rounded-full border border-primary-300 size-[54px]"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <i className="fa fa-bars fa-xl "></i>
+        <i className="fa fa-bars fa-lg mt-0.5"></i>
       </button>
 
       <aside
@@ -28,7 +28,7 @@ export default function SideMenu() {
       >
         <button className="sm:hidden" onClick={() => setIsOpen(false)}>
           <i
-            className="fa fa-close fa-xl text-secondary-300 absolute top-3.5 right-3.5"
+            className="fa fa-close fa-lg text-secondary-300 absolute top-3.5 right-3.5"
             aria-hidden="true"
           ></i>
         </button>
@@ -52,7 +52,7 @@ export default function SideMenu() {
                       ${isActive ? "bg-n-1 text-secondary-500" : "bg-white"}
                 `}
                 >
-                  <i className={`fa ${item.icon} fa-xl`} aria-hidden="true"></i>
+                  <i className={`fa ${item.icon} fa-2x`} aria-hidden="true"></i>
                   <span>{item.title}</span>
                 </a>
               </li>
