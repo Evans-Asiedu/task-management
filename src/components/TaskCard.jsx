@@ -1,4 +1,6 @@
-export function TaskCard() {
+import React from "react";
+
+const TaskCard = ({ task }) => {
   return (
     <div className="bg-white rounded-xl shadow-sm p-4">
       {/* Image Section */}
@@ -10,7 +12,7 @@ export function TaskCard() {
 
       {/* Task Title & Role */}
       <h3 className="text-md font-semibold mt-3">
-        Creating Awesome Mobile Apps
+        Creating Awesome Mobile Apps {task}
       </h3>
       <p className="text-gray-500 text-sm">UI/UX Designer</p>
 
@@ -61,4 +63,6 @@ export function TaskCard() {
       {/* Go To Detail Button */}
     </div>
   );
-}
+};
+
+export default TaskCard;
