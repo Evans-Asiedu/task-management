@@ -37,7 +37,7 @@ const UpcomingTask = () => {
           ></i>
           <i
             className={`fa fa-angle-right fa-2x ${
-              startIndex === tasks.length
+              startIndex + taskPerView >= tasks.length
                 ? "opacity-50 cursor-not-allowed"
                 : "cursor-pointer"
             }`}
