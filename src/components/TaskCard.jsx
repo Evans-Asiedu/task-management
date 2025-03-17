@@ -1,20 +1,19 @@
 import React from "react";
+import moment from "moment";
 
 const TaskCard = ({ task }) => {
   return (
     <div className="bg-white rounded-xl shadow-sm p-4">
       {/* Image Section */}
       <img
-        src="/Image.png"
+        src={task.imageUrl}
         alt="Task Preview"
         className="w-full h-32 rounded-lg object-fit"
       />
 
       {/* Task Title & Role */}
-      <h3 className="text-md font-semibold mt-3">
-        Creating Awesome Mobile Apps {task}
-      </h3>
-      <p className="text-gray-500 text-sm">UI/UX Designer</p>
+      <h3 className="text-md font-semibold mt-3">{task.title}</h3>
+      <p className="text-gray-500 text-sm">{task.category}</p>
 
       {/* Progress Bar */}
       <div className="mt-3">
@@ -42,7 +41,9 @@ const TaskCard = ({ task }) => {
       {/* Time & Avatars */}
       <div className="flex justify-between items-center mt-3">
         <div className="flex items-center space-x-2">
-          <span className="text-gray-600 text-sm">🕧 1 Hour</span>
+          <span className="text-gray-600 text-sm">
+            🕧 {moment(task.createdAt).fromNow()}
+          </span>
         </div>
         <div className="flex -space-x-2">
           <img

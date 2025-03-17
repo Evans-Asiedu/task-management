@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import TaskCard from "./TaskCard";
 import TaskDetails from "./TaskDetails";
+import { data } from "src/data";
 
 const TodayTask = () => {
+  const task = data.tasks[1];
+
   return (
     <div className="bg-white w-80 rounded-xl shadow-lg p-4">
       <TaskHeader name="Today Task" />
-      <TaskCard />
+      <TaskCard task={task} />
       <TaskDetails />
     </div>
   );

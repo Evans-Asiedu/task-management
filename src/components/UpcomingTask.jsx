@@ -21,7 +21,7 @@ const UpcomingTask = () => {
   };
 
   return (
-    <div className="max-w-[688px] mx-4">
+    <div className="max-w-[327px] lg:max-w-[688px] mx-4">
       {/* Header */}
       <div className="flex justify-between items-center mb-3">
         <h2 className="text-lg font-semibold mx-1">Upcoming Task</h2>
@@ -57,7 +57,7 @@ const UpcomingTask = () => {
           .map((task, index) => (
             <div key={index} className="max-w-[328px] flex-shrink-0 mx-2">
               {" "}
-              <TaskCard task={task.id} />
+              <TaskCard task={task} />
             </div>
           ))}
       </div>
