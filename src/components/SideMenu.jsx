@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { data } from "src/data";
+import HelpCenter from "./HelpCenter";
 // import { useLocation } from "react-router-dom";
 
 export default function SideMenu() {
@@ -59,6 +60,11 @@ export default function SideMenu() {
             ))}
           </ul>
         </nav>
+
+        {/* Help Center */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[188px]">
+          <HelpCenter />
+        </div>
       </aside>
     </>
   );

@@ -6,6 +6,7 @@ import { Calendar } from "components/Calendar";
 import TodayTask from "components/TodayTask";
 import SideMenu from "components/SideMenu";
 import UpcomingTask from "./components/UpcomingTask";
+import HelpCenter from "./components/HelpCenter";
 
 function App() {
   return (
