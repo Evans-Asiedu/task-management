@@ -9,7 +9,7 @@ const TodayTask = () => {
   return (
     <div className="bg-white w-80 rounded-xl shadow-lg p-4">
       <TaskHeader name="Today Task" />
-      <TaskCard task={task} />
+      {/* <TaskCard task={task} /> */}
       <TaskDetails />
     </div>
   );
