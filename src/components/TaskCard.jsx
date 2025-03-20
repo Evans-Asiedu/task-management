@@ -1,37 +1,45 @@
-export function TaskCard() {
+import { formatDistanceToNow } from "date-fns";
+
+const TaskCard = ({ task }) => {
+  const avatars = [
+    "/avatar1.png",
+    "/avatar2.png",
+    "/avatar3.png",
+    "/avatar4.png",
+    "/avatar5.png",
+  ];
+
   return (
-    <div className="bg-white rounded-xl shadow-sm p-4">
+    <div className=" bg-white rounded-xl shadow-sm p-4">
       {/* Image Section */}
       <img
-        src="/Image.png"
-        alt="Task Preview"
+        src={task.imageUrl}
+        alt={task.title}
         className="w-full h-32 rounded-lg object-fit"
       />
 
       {/* Task Title & Role */}
-      <h3 className="text-md font-semibold mt-3">
-        Creating Awesome Mobile Apps
-      </h3>
-      <p className="text-gray-500 text-sm">UI/UX Designer</p>
+      <h3 className="text-md font-semibold mt-3">{task.title}</h3>
+      <p className="text-secondary-400 text-sm">{task.category}</p>
 
       {/* Progress Bar */}
       <div className="mt-3">
         <div className="flex justify-between items-center">
           <p className="text-sm font-medium">Progress</p>
-          <span className="stroke-primary-500 text-sm font-medium">90%</span>
+          <span className="text-primary-500 text-sm font-medium">90%</span>
         </div>
 
-        <div className="relative w-full bg-gray-200 h-2 rounded-full mt-1">
+        <div className="relative w-full bg-primary-200 h-2 rounded-full mt-1">
           {/* Progress Fill */}
           <div
-            className="bg-blue-500 h-2 rounded-full"
+            className="bg-primary-500 h-2 rounded-full"
             style={{ width: "90%" }}
           ></div>
 
           {/* Circular Indicator */}
           <div
             className="absolute top-1/2 right-0 -translate-x-1/2 -translate-y-1/2 
-                        w-4 h-4 bg-blue-400 border-2 border-white rounded-full shadow-md"
+                        w-4 h-4 bg-primary-500 border-2 border-white rounded-full shadow-md"
             style={{ left: "90%" }}
           ></div>
         </div>
@@ -40,25 +48,22 @@ export function TaskCard() {
       {/* Time & Avatars */}
       <div className="flex justify-between items-center mt-3">
         <div className="flex items-center space-x-2">
-          <span className="text-gray-600 text-sm">🕧 1 Hour</span>
+          <i
+            className="fa fa-clock-o fa-lg text-secondary-400"
+            aria-hidden="true"
+          ></i>{" "}
+          <span className="font-medium">
+            {formatDistanceToNow(new Date(task.createdAt), { addSuffix: true })}
+          </span>
         </div>
         <div className="flex -space-x-2">
-          <img
-            src="/avatar1.jpg"
-            className="w-6 h-6 rounded-full border border-white"
-          />
-          <img
-            src="/avatar2.jpg"
-            className="w-6 h-6 rounded-full border border-white"
-          />
-          <img
-            src="/avatar3.jpg"
-            className="w-6 h-6 rounded-full border border-white"
-          />
+          {avatars.map((avator) => (
+            <img src={avator} className="rounded-full border border-white" />
+          ))}
         </div>
       </div>
-
-      {/* Go To Detail Button */}
     </div>
   );
-}
+};
+
+export default TaskCard;

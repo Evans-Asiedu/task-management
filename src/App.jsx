@@ -5,6 +5,7 @@ import { Calendar } from "components/Calendar";
 import TodayTask from "components/TodayTask";
 import SideMenu from "components/SideMenu";
 import UpcomingTask from "./components/UpcomingTask";
+import HelpCenter from "./components/HelpCenter";
 import ActivityTracker from "./components/ActivityTracker";
 //import ActivityTrackerDefaultToolkit from "./components/ActivityTrackerDefaultToolkit";
 
@@ -24,7 +25,7 @@ function App() {
               {/* <ActivityTrackerDefaultToolkit /> */}
             </div>
 
-            {/* <UpcomingTask /> */}
+            <UpcomingTask />
           </div>
           <div className="w-full lg:w-436/1440 mx-4">
             <Calendar />
