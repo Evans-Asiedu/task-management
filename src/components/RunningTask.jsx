@@ -9,7 +9,7 @@ const RunningTask = () => {
   const circumference = 2 * Math.PI * radius;
   const offset = circumference - (progress / 100) * circumference;
   return (
-    <div className='m-4 w-[327px] h-[124px] sm:w-[200px] sm:h-[220px] flex sm:flex-col justify-between shadow-xl p-4 bg-secondary-900 text-white rounded-[10px] transition duration-500' >
+    <div className='m-4 w-[327px] h-[124px] sm:w-[200px] sm:h-[220px] flex sm:flex-col justify-between shadow-xl p-4 bg-secondary-900 text-white rounded-lg transition duration-500' >
 
       <div className='flex flex-col gap-5'>
         <h2 className='text-base font-semibold text-primary-0 '>Running Task</h2>
