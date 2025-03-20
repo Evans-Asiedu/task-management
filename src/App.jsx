@@ -7,8 +7,7 @@ import SideMenu from "components/SideMenu";
 import UpcomingTask from "./components/UpcomingTask";
 import HelpCenter from "./components/HelpCenter";
 import ActivityTracker from "./components/ActivityTracker";
-//import ActivityTrackerDefaultToolkit from "./components/ActivityTrackerDefaultToolkit";
-
+import ActivityTrackerDefaultToolTip from "./components/ActivityTrackerDefaultToolTip";
 function App() {
   return (
     <>
@@ -22,7 +21,7 @@ function App() {
             <div className="flex gap-2 flex-wrap">
               <RunningTask />
               <ActivityTracker />
-              {/* <ActivityTrackerDefaultToolkit /> */}
+              {/* <ActivityTrackerDefaultToolTip /> */}
             </div>
 
             <UpcomingTask />

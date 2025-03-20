@@ -28,7 +28,7 @@ const CustomTooltip = ({ active, payload }) => {
   return null;
 };
 
-const ActivityTrackerDefaultToolkit = () => {
+const ActivityTrackerDefaultToolTip = () => {
   const [xAxisInterval, setXAxisInterval] = useState(0); // Control Y-axis interval
   const chartContainerRef = useRef(null);
 
@@ -105,4 +105,4 @@ const ActivityTrackerDefaultToolkit = () => {
 
 
 
-export default ActivityTrackerDefaultToolkit;
+export default ActivityTrackerDefaultToolTip;
