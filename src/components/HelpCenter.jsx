@@ -1,8 +1,8 @@
 import React from "react";
 
-const HelpCenter = () => {
+const HelpCenter = ({className}) => {
   return (
-    <div className="max-w-[188px] h-[274px] relative">
+    <div className={`${className} max-w-[188px] h-[274px] relative`}>
       <div className="h-[52px] w-[52px] bg-white rounded-full border border-primary-100 absolute left-1/2 -translate-x-1/2 z-1">
         <i
           class="absolute top-0.5 left-1/2 -translate-x-1/2 fa fa-question-circle fa-3x"

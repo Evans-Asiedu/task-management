@@ -1,17 +1,24 @@
-import { data } from "src/data";
-import RunningTask from "components/RunningTask";
-import { Calendar } from "components/Calendar";
+import { useState } from "react";
+import Header from "components/layout/Header";
+import Main from "components/layout/Main";
+import Sidebar from "components/layout/Sidebar";
 
-import TodayTask from "components/TodayTask";
-import SideMenu from "components/SideMenu";
-import UpcomingTask from "./components/UpcomingTask";
-import HelpCenter from "./components/HelpCenter";
-import ActivityTracker from "./components/ActivityTracker";
-import ActivityTrackerDefaultToolTip from "./components/ActivityTrackerDefaultToolTip";
 function App() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
   return (
-    <>
-      <div className="container mx-auto max-w-[1440px] ">
+    <div id="app" className="flex">
+      <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
+
+      <div
+        className={`flex flex-col flex-1 transition-all duration-300 ease-in-out min-h-screen
+        ${isSidebarOpen ? "md:ml-[252px]" : ""}`}
+      >
+        <Header isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
+        <Main />
+      </div>
+
+      {/* <div className="container mx-auto max-w-[1440px] ">
         <div className="flex flex-col lg:flex-row gap-0">
           <div className="w-full lg:w-270/1440 bg-white">
             <SideMenu />
@@ -21,7 +28,6 @@ function App() {
             <div className="flex gap-2 flex-wrap">
               <RunningTask />
               <ActivityTracker />
-              {/* <ActivityTrackerDefaultToolTip /> */}
             </div>
 
             <UpcomingTask />
@@ -31,8 +37,8 @@ function App() {
             <TodayTask />
           </div>
         </div>
-      </div>
-    </>
+      </div> */}
+    </div>
   );
 }
 

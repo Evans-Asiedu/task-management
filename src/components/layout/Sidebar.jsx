@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { data } from "src/data";
-import HelpCenter from "./HelpCenter";
+import HelpCenter from "components/HelpCenter";
 // import { useLocation } from "react-router-dom";
 
-export default function SideMenu() {
-  const [isOpen, setIsOpen] = useState(false);
-
+export default function Sidebar({
+  isOpen: isSidebarOpen,
+  setIsOpen: setIsSidebarOpen,
+}) {
   // const location = useLocation();
   // const isActive = location.pathname === item.path
   const isActive = false;
@@ -14,20 +15,12 @@ export default function SideMenu() {
     <>
       {/* Sidebar */}
 
-      {/* Hamburger Icon */}
-      <button
-        className="md:hidden text-primary-300 bg-white fixed top-4 left-4 z-40 rounded-full border border-primary-300 size-[54px]"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <i className="fa fa-bars fa-lg mt-0.5"></i>
-      </button>
-
       <aside
-        className={`fixed w-[252px] top-0 left-0 min-h-screen p-9 border-r border-r-n-1 bg-white transform transition-transform duration-300 z-100  ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
-        } md:relative md:translate-x-0`}
+        className={`flex flex-col fixed top-0 left-0 min-h-screen p-9 border-r border-r-n-1 bg-white transition-transform duration-300 ease-in-out z-50 ${
+          isSidebarOpen ? "translate-x-0 w-[252px]" : "-translate-x-full"
+        } md:translate-x-0`}
       >
-        <button className="sm:hidden" onClick={() => setIsOpen(false)}>
+        <button className="sm:hidden" onClick={() => setIsSidebarOpen(false)}>
           <i
             className="fa fa-close fa-lg text-secondary-300 absolute top-3.5 right-3.5"
             aria-hidden="true"
@@ -62,9 +55,7 @@ export default function SideMenu() {
         </nav>
 
         {/* Help Center */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[188px]">
-          <HelpCenter />
-        </div>
+        <HelpCenter className="mt-auto" />
       </aside>
     </>
   );
