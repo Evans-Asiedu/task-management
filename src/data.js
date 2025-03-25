@@ -3,7 +3,7 @@ export const data = {
       "id": 12345,
       "name": "Jane Doe",
       "email": "janedoe@example.com",
-      "avatar": "https://example.com/avatar.jpg",
+      "avatar": "/Profil.png",
       "role": "admin",
       "preferences": {
         "theme": "light",
