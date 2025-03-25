@@ -1,10 +1,12 @@
-import { useState } from "react";
-import Header from "components/layout/Header";
-import Main from "components/layout/Main";
-import Sidebar from "components/layout/Sidebar";
+import { useState, useEffect } from "react";
+import Header from "src/layout/Header";
+import Main from "src/layout/Main";
+import Sidebar from "src/layout/Sidebar";
 
 function App() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(() => {
+    return window.matchMedia("(min-width: 768px)").matches;
+  });
 
   return (
     <div id="app" className="flex">
