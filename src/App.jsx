@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import Header from "src/layout/Header";
-import Main from "src/layout/Main";
-import Sidebar from "src/layout/Sidebar";
+import Header from "components/layout/Header";
+import Main from "components/layout/Main";
+import Sidebar from "components/layout/Sidebar";
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(() => {

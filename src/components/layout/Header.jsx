@@ -9,7 +9,7 @@ const Header = ({ isOpen: isSidebarOpen, setIsOpen: setIsSidebarOpen }) => {
     <header className="h-[248px] md:h-[192px] bg-white p-8 flex flex-col gap-6">
       <div className="flex flex-col-reverse md:flex-row justify-between items-center">
         {/* title */}
-        <h1 className="text-2xl font-semibold text-secondary-500">{title}</h1>
+        <h1 className="text-2xl font-semibold text-secondary-500 self-start md:self-center">{title}</h1>
 
         <div className="flex justify-between md:justify-end items-center w-full">
           {/* Sidebar toggle button */}
@@ -28,7 +28,7 @@ const Header = ({ isOpen: isSidebarOpen, setIsOpen: setIsSidebarOpen }) => {
               className="text-secondary-300 border-n-1 relative"
             >
               {unreadNotifications > 0 && (
-                <span className="absolute top-9 right-14 w-2 h-2 bg-red-500 rounded-full"></span>
+                <span className="absolute top-3 right-2 w-2 h-2 bg-red-500 rounded-full"></span>
               )}
             </Button>
 
