@@ -1,51 +1,64 @@
-import React, { useState } from "react";
-import TaskCard from "./TaskCard";
-import CardHeader from "./CardHeader";
+import React, { useState, useEffect } from "react";
 import { data } from "src/data";
+import SliderHeader from "./SliderHeader";
+import SliderBody from "./SliderBody";
 
 const UpcomingTask = () => {
   const tasks = data.tasks;
   const [startIndex, setStartIndex] = useState(0);
+  const [taskPerView, setTaskPerView] = useState(1);
 
-  const taskPerView = window.innerWidth >= 1024 ? 2 : 1;
+  // function to check screen size
+  useEffect(() => {
+    const updateTaskPerView = () => {
+      if (window.matchMedia("(min-width: 1024px)").matches) {
+        setTaskPerView(2);
+      } else {
+        setTaskPerView(1);
+      }
+    };
+
+    updateTaskPerView();
+    window.addEventListener("resize", updateTaskPerView);
+
+    return () => window.removeEventListener("resize", updateTaskPerView);
+  }, []);
+
+  const start = startIndex + 1;
+  const current = startIndex + taskPerView;
+  const end = tasks.length;
+  let tasksToShow = tasks.slice(startIndex, current);
 
   const handlePrevious = () => {
     if (startIndex > 0) {
       setStartIndex(startIndex - 1);
+      updateTaskToShow();
     }
   };
 
   const handleNext = () => {
     if (startIndex + taskPerView < tasks.length) {
       setStartIndex(startIndex + 1);
+      updateTaskToShow();
     }
+  };
+
+  const updateTaskToShow = () => {
+    tasksToShow = tasks.slice(startIndex, startIndex + taskPerView);
   };
 
   return (
     <div className="max-w-[327px] lg:max-w-[688px] mx-4">
       {/* Header */}
-      <CardHeader
-        start={startIndex}
-        current={startIndex + taskPerView}
-        total={tasks.length}
+      <SliderHeader
+        title={"Upcoming Task"}
         onNext={handleNext}
         onPrevious={handlePrevious}
+        start={start}
+        current={current}
+        end={end}
       />
-      <div
-        className="flex flex-row transition-transform duration-300 ease-in-out"
-        // style={{
-        //   transform: `translateX(-${startIndex * (100 / taskPerView)}%)`,
-        // }}
-      >
-        {tasks
-          .slice(startIndex, startIndex + taskPerView)
-          .map((task, index) => (
-            <div key={index} className="max-w-[328px] flex-shrink-0 mx-2">
-              {" "}
-              <TaskCard task={task} />
-            </div>
-          ))}
-      </div>
+      <SliderBody slides={tasksToShow} />
     </div>
   );
 };
