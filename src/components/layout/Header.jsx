@@ -1,7 +1,11 @@
+import { useState } from "react";
 import { data } from "src/data";
 import Button from "components/ui/Button";
+import Dropdown from "components/ui/Dropdown";
+import { timeAgo } from "src/utils/formatDate";
 
 const Header = ({ isOpen: isSidebarOpen, setIsOpen: setIsSidebarOpen }) => {
+  const [isNotifOpen, setIsNotifOpen] = useState(false);
   const title = "Overview";
   const unreadNotifications = data.notifications.filter((n) => !n.read).length;
 
@@ -9,7 +13,9 @@ const Header = ({ isOpen: isSidebarOpen, setIsOpen: setIsSidebarOpen }) => {
     <header className="h-[248px] md:h-[192px] bg-white p-8 flex flex-col gap-6">
       <div className="flex flex-col-reverse md:flex-row justify-between items-center">
         {/* title */}
-        <h1 className="text-2xl font-semibold text-secondary-500 self-start md:self-center">{title}</h1>
+        <h1 className="text-2xl font-semibold text-secondary-500 self-start md:self-center">
+          {title}
+        </h1>
 
         <div className="flex justify-between md:justify-end items-center w-full">
           {/* Sidebar toggle button */}
@@ -22,15 +28,49 @@ const Header = ({ isOpen: isSidebarOpen, setIsOpen: setIsSidebarOpen }) => {
 
           <div className="flex items-center gap-4">
             {/* Notifications */}
-            <Button
-              icon="fa-bell-o"
-              iconOnly
-              className="text-secondary-300 border-n-1 relative"
-            >
-              {unreadNotifications > 0 && (
-                <span className="absolute top-3 right-2 w-2 h-2 bg-red-500 rounded-full"></span>
-              )}
-            </Button>
+            <div className="relative">
+              <Button
+                icon="fa-bell-o"
+                iconOnly
+                className="text-secondary-300 border-n-1 relative"
+                onClick={() => setIsNotifOpen(!isNotifOpen)}
+              >
+                {unreadNotifications > 0 && (
+                  <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+                )}
+              </Button>
+
+              <Dropdown isOpen={isNotifOpen}>
+                <div className="px-4 mb-3 flex justify-between items-center">
+                  <h3 className="text-secondary-500 font-semibold">
+                    Notifications
+                  </h3>
+                  <span className="text-xs text-secondary-300">
+                    {unreadNotifications} new
+                  </span>
+                </div>
+                <div className="flex flex-col">
+                  {data.notifications.slice(0, 5).map((notif) => (
+                    <div
+                      key={notif.id}
+                      className="px-4 py-2 hover:bg-n-1 cursor-pointer flex items-start justify-between"
+                    >
+                      <div>
+                        <p className="text-sm text-secondary-500">
+                          {notif.description}
+                        </p>
+                        <span className="text-xs text-secondary-300">
+                          {timeAgo(notif.timestamp)}
+                        </span>
+                      </div>
+                      {!notif.read && (
+                        <span className="mt-2 size-2 rounded-full bg-primary-500 shrink-0" />
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </Dropdown>
+            </div>
 
             {/* Profile button */}
             <div className="size-[44px] md:size-[52px] rounded-full overflow-hidden">
