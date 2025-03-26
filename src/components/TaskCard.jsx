@@ -1,4 +1,4 @@
-import { formatDistanceToNow } from "date-fns";
+import { timeAgo } from "../utils/formatDate";
 
 const TaskCard = ({ task }) => {
   const avatars = [
@@ -10,7 +10,7 @@ const TaskCard = ({ task }) => {
   ];
 
   return (
-    <div className=" bg-white rounded-xl shadow-sm p-4">
+    <div className=" bg-white rounded-xl p-4">
       {/* Image Section */}
       <img
         src={task.imageUrl}
@@ -52,9 +52,7 @@ const TaskCard = ({ task }) => {
             className="fa fa-clock-o fa-lg text-secondary-400"
             aria-hidden="true"
           ></i>{" "}
-          <span className="font-medium">
-            {formatDistanceToNow(new Date(task.createdAt), { addSuffix: true })}
-          </span>
+          <span className="font-medium">{timeAgo(task.createdAt)}</span>
         </div>
         <div className="flex -space-x-2">
           {avatars.map((avator) => (
