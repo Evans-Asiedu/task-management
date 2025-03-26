@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import TaskCard from "components/TaskCard";
 import TaskDetails from "components/TaskDetails";
 import { data } from "src/data";
@@ -7,7 +7,7 @@ const TodayTask = () => {
   const task = data.tasks[1];
 
   return (
-    <div className="bg-white max-w-[372px] rounded-[10px] p-6">
+    <div className="bg-white max-w-[372px] rounded-r-1 p-6">
       <TaskHeader name="Today Task" />
       <div className="mt-6">
         <TaskCard task={task} />

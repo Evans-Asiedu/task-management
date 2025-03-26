@@ -1,4 +1,4 @@
-import { timeAgo } from "../utils/formatDate";
+import { timeAgo } from "src/utils/formatDate";
 
 const TaskCard = ({ task }) => {
   const avatars = [

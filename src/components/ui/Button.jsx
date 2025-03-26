@@ -9,7 +9,7 @@ const Button = ({
     "bg-white border flex items-center justify-center transition-colors";
   const sizeStyles = iconOnly
     ? "size-[44px] md:size-[52px] rounded-full"
-    : "h-[52px] px-6 rounded-[10px] gap-3";
+    : "h-[52px] px-6 rounded-r-1 gap-3";
   const iconStyles = iconOnly ? "text-secondary-300" : "";
 
   return (

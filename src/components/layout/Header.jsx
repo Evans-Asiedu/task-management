@@ -86,7 +86,7 @@ const Header = ({ isOpen: isSidebarOpen, setIsOpen: setIsSidebarOpen }) => {
 
       <div className="flex justify-between items-center gap-3">
         {/* search box */}
-        <div className="flex items-center gap-2 bg-white border border-n-1  py-3.5 px-6 w-full md:w-[320px] h-[52px] rounded-[10px]">
+        <div className="flex items-center gap-2 bg-white border border-n-1  py-3.5 px-6 w-full md:w-[320px] h-[52px] rounded-r-1">
           <input
             type="text"
             placeholder="Search tasks..."

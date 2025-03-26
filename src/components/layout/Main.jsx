@@ -1,4 +1,4 @@
-import UpcomingTask from "../UpcomingTask";
+import UpcomingTask from "components/UpcomingTask";
 
 const Main = () => {
   return (

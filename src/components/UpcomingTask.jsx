@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { data } from "src/data";
-import SliderHeader from "./SliderHeader";
-import SliderBody from "./SliderBody";
+import SliderHeader from "components/SliderHeader";
+import SliderBody from "components/SliderBody";
 
 const UpcomingTask = () => {
   const tasks = data.tasks;
