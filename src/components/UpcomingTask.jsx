@@ -27,24 +27,17 @@ const UpcomingTask = () => {
   const start = startIndex + 1;
   const current = startIndex + taskPerView;
   const end = tasks.length;
-  let tasksToShow = tasks.slice(startIndex, current);
 
   const handlePrevious = () => {
     if (startIndex > 0) {
       setStartIndex(startIndex - 1);
-      updateTaskToShow();
     }
   };
 
   const handleNext = () => {
     if (startIndex + taskPerView < tasks.length) {
       setStartIndex(startIndex + 1);
-      updateTaskToShow();
     }
-  };
-
-  const updateTaskToShow = () => {
-    tasksToShow = tasks.slice(startIndex, startIndex + taskPerView);
   };
 
   return (
@@ -58,7 +51,13 @@ const UpcomingTask = () => {
         current={current}
         end={end}
       />
-      <SliderBody slides={tasksToShow} />
+      <div className="overflow-hidden relative">
+        <SliderBody
+          slides={tasks}
+          startIndex={startIndex}
+          slidePerView={taskPerView}
+        />
+      </div>
     </div>
   );
 };

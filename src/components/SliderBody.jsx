@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import TaskCard from "./TaskCard";
 
-const SliderBody = ({ slides }) => {
+const SliderBody = ({ slides, startIndex, slidePerView }) => {
   return (
     <div
-      className="flex flex-row transition-transform duration-300 ease-in-out"
-      // style={{
-      //   transform: `translateX(-${startIndex * (100 / taskPerView)}%)`,
-      // }}
+      className="flex transition-transform duration-500 ease-in-outt"
+      style={{
+        transform: `translateX(-${startIndex * (100 / slidePerView)}%)`,
+      }}
     >
       {slides.map((slide) => (
-        <div key={slide.id} className="max-w-[328px] flex-shrink-0 mx-2">
+        <div key={slide.id} className="mx-0 md:mx-2">
           {" "}
           <TaskCard task={slide} />
         </div>
