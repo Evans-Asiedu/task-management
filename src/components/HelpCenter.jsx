@@ -11,7 +11,7 @@ const HelpCenter = ({ className }) => {
           aria-hidden="true"
         ></i>
       </div>
-      <div className="h-[248px] absolute bottom-0 bg-secondary-500 flex flex-col rounded-2xl p-3">
+      <div className="h-[248px] absolute bottom-0 bg-secondary-500 flex flex-col rounded-lg p-3">
         <div className="flex flex-col flex-grow justify-center">
           <h1 className="text-center font-semibold text-white">Help Center</h1>
           <p className="text-center text-[12px] mt-3 text-white">
@@ -19,7 +19,7 @@ const HelpCenter = ({ className }) => {
             questions
           </p>
         </div>
-        <button className="text-[12px] bg-primary-0 text-seondary-500 rounded-2xl py-2 px-2.5 cursor-pointer">
+        <button className="text-[12px] bg-primary-0 text-seondary-500 rounded-lg py-2 px-2.5 cursor-pointer">
           {" "}
           Go to Help Center
         </button>
