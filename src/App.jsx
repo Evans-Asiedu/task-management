@@ -16,7 +16,7 @@ function App() {
         className={`flex flex-col flex-1 transition-all duration-300 ease-in-out min-h-screen
         ${isSidebarOpen ? "md:ml-[252px]" : ""}`}
       >
-        <Header isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
+        <Header isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} showActions={false} title="Overview" />
         <Main />
       </div>
     </div>
