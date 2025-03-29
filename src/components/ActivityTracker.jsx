@@ -17,7 +17,7 @@ const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
       <div className=" w-[65px] bg-secondary-500 py-1 px-2 rounded-lg relative ">
-        <p className="text-primary-0 ">
+        <p className="text-primary-0">
           {payload[0].value} Task
         </p>
         <div className="w-[20px] h-[20px] absolute left-6 top-4 rotate-45 -z-10 bg-secondary-500"></div>
@@ -62,7 +62,7 @@ const ActivityTracker = () => {
   return (
 
     <>
-      <div className="mt-4 w-full max-w-md md:max-w-lg h-auto bg-n-1 flex flex-col justify-evenly items-center gap-4  rounded-lg"
+      <div className="mt-4 w-full max-w-md md:max-w-lg h-auto bg-n-1 flex flex-col justify-evenly items-center gap-4  rounded-r-1"
         ref={chartContainerRef}
       >
         <div className="w-full max-w-[420px] flex justify-between">
@@ -73,7 +73,7 @@ const ActivityTracker = () => {
           </div>
         </div>
 
-        <div className="p-2 w-full max-w-[420px] h-[130px] bg-primary-0 rounded-xl">
+        <div className="pt-6 pb-4 pr-8 w-full max-w-[420px] h-[150px] bg-primary-0 rounded-xl">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart
               data={data}
