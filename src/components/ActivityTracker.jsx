@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
-import { MdKeyboardArrowDown } from "react-icons/md";
+
 
 const data = [
   { day: "S", tasks: 1 },
@@ -62,26 +62,26 @@ const ActivityTracker = () => {
   return (
 
     <>
-      <div className="mt-4  w-[330px] h-[215px] md:w-[460px] md:h-[215px] bg-[#F5F5F7] flex flex-col justify-evenly  items-center rounded-lg"
+      <div className="mt-4 w-full max-w-md md:max-w-lg h-auto bg-n-1 flex flex-col justify-evenly items-center gap-4  rounded-lg"
         ref={chartContainerRef}
       >
-        <div className="w-[290px] md:min-w-[420px] flex justify-between">
-          <h2 className="text-lg font-semibold text-secondary-500 ">Activity</h2>
-          <div className="flex items-start  justify-center gap-1.5  ">
-            <p className="text-secondary-500 ">This Week</p><MdKeyboardArrowDown size={25} className="text-secondary-400 " />
+        <div className="w-full max-w-[420px] flex justify-between">
+          <h2 className="text-lg font-semibold text-secondary-500">Activity</h2>
+          <div className="flex items-start justify-center gap-1.5">
+            <p className="text-secondary-500">This Week</p>
+            <i className="fa fa-angle-down fa-lg text-secondary-400 "></i>
           </div>
         </div>
-        <div className="p-2 w-[290px] md:min-w-[420px] h-[130px] bg-primary-0 rounded-xl">
-          <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={data} width={500} height={300} margin={{ top: 10, right: 10 }}
 
+        <div className="p-2 w-full max-w-[420px] h-[130px] bg-primary-0 rounded-xl">
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart
+              data={data}
+              margin={{ top: 10, right: 10 }}
               onMouseMove={(e) => {
-                if (e.activePayload && e.activePayload.length) {
+                if (e.activePayload?.length) {
                   const { chartX, chartY } = e;
-                  setTooltipPosition({
-                    x: chartX - 36, // Centering tooltip horizontally
-                    y: chartY - 60, // Positioning slightly above the dot
-                  });
+                  setTooltipPosition({ x: chartX - 36, y: chartY - 60 });
                 }
               }}
             >
@@ -93,24 +93,20 @@ const ActivityTracker = () => {
               </defs>
 
               <XAxis dataKey="day" interval={xAxisInterval} axisLine={false} tickLine={false} padding={{ left: 10 }} />
-              <YAxis tickCount={4} interval={0} domain={[1, 'dataMax']} allowDecimals={false} axisLine={false} tickLine={false} padding={
-                { bottom: 10 }} />
-              <Tooltip content={<CustomTooltip />}
-                cursor={false}
-                position={tooltipPosition} // Set custom position
-                coordinate={{ x: tooltipPosition.x, y: tooltipPosition.y }}
-              /> {/* Use custom tooltip */}
+              <YAxis tickCount={4} interval={0} domain={[1, 'dataMax']} allowDecimals={false} axisLine={false} tickLine={false} padding={{ bottom: 10 }} />
+              <Tooltip content={<CustomTooltip />} cursor={false} position={tooltipPosition} />
 
               <Line type="monotone" dataKey="tasks" stroke={"var(--color-secondary-500)"}
                 strokeWidth={3}
                 dot={false}
                 activeDot={{ r: 6, fill: "var(--color-primary-0)", stroke: "var(--color-primary-500)", strokeWidth: 3 }}
-                filter="url(#lineShadow)" // Apply the shadow filter
+                filter="url(#lineShadow)"
               />
             </LineChart>
           </ResponsiveContainer>
         </div>
       </div>
+
     </>
   );
 };
