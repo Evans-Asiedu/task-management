@@ -2,8 +2,7 @@ import { useState } from "react";
 import Header from "components/layout/Header";
 import Main from "components/layout/Main";
 import Sidebar from "components/layout/Sidebar";
-import { Calendar } from "./components/Calendar";
-import TodayTask from "./components/TodayTask";
+
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(() => {
@@ -26,10 +25,7 @@ function App() {
         />
         <Main />
       </div>
-      <div className="mt-5 ps-4 md:mt-0">
-        <Calendar />
-        <TodayTask />
-      </div>
+
     </div>
   );
 }

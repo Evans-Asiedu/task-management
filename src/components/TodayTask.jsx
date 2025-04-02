@@ -7,7 +7,7 @@ const TodayTask = () => {
   const task = data.tasks[1];
 
   return (
-    <div className="bg-white max-w-[372px] rounded-r-1 p-3 mt-5 me-5">
+    <div className="bg-primary-0 max-w-[372px] rounded-r-1 p-3 mt-5 me-5">
       <TaskHeader name="Today Task" />
       <TaskCard task={task} />
       <TaskDetails />
