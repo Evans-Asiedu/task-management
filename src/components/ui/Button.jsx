@@ -6,7 +6,7 @@ const Button = ({
   ...props
 }) => {
   const baseStyles =
-    "bg-white border flex items-center justify-center transition-colors";
+    "bg-primary-0 border border-n-1 flex items-center justify-center transition-colors";
   const sizeStyles = iconOnly
     ? "size-[44px] md:size-[52px] rounded-full"
     : "h-[52px] px-6 rounded-r-1 gap-3";

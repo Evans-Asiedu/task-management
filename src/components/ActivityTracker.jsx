@@ -1,6 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
-
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
 
 const data = [
   { day: "S", tasks: 1 },
@@ -29,7 +35,6 @@ const CustomTooltip = ({ active, payload }) => {
 };
 
 const ActivityTracker = () => {
-
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
   const [xAxisInterval, setXAxisInterval] = useState(0); // Control Y-axis interval
   const chartContainerRef = useRef(null);
@@ -62,7 +67,6 @@ const ActivityTracker = () => {
 
 
   return (
-
     <>
       <div className="mt-4 w-full max-w-md md:max-w-lg h-auto bg-n-1 flex flex-col justify-evenly items-center gap-3  rounded-r-1"
         ref={chartContainerRef}
@@ -92,8 +96,19 @@ const ActivityTracker = () => {
             >
               {/* Define an SVG filter for the shadow */}
               <defs>
-                <filter id="lineShadow" x="-50%" y="-50%" width="200%" height="200%">
-                  <feDropShadow dx="2" dy="10" stdDeviation="2" floodColor="rgba(0, 0, 0, 0.2)" />
+                <filter
+                  id="lineShadow"
+                  x="-50%"
+                  y="-50%"
+                  width="200%"
+                  height="200%"
+                >
+                  <feDropShadow
+                    dx="2"
+                    dy="10"
+                    stdDeviation="2"
+                    floodColor="rgba(0, 0, 0, 0.2)"
+                  />
                 </filter>
               </defs>
 
@@ -106,23 +121,27 @@ const ActivityTracker = () => {
               }} />
               <Tooltip content={<CustomTooltip />} cursor={false} position={tooltipPosition} />
 
-              <Line type="monotone" dataKey="tasks" stroke={"var(--color-secondary-500)"}
+              <Line
+                type="monotone"
+                dataKey="tasks"
+                stroke={"var(--color-secondary-500)"}
                 strokeWidth={3}
                 dot={false}
-                activeDot={{ r: 6, fill: "var(--color-primary-0)", stroke: "var(--color-primary-500)", strokeWidth: 3 }}
+                activeDot={{
+                  r: 6,
+                  fill: "var(--color-primary-0)",
+                  stroke: "var(--color-primary-500)",
+                  strokeWidth: 3,
+                }}
                 filter="url(#lineShadow)"
               />
             </LineChart>
           </ResponsiveContainer>
         </div>
       </div>
-
     </>
   );
 };
-
-
-
 
 export default ActivityTracker;
 

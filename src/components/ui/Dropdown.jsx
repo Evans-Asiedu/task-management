@@ -7,7 +7,7 @@ const Dropdown = forwardRef(({ isOpen, children, width = "320px" }, ref) => {
     <div
       ref={ref}
       style={{ width }}
-      className="absolute top-full right-0 mt-2 bg-white border border-n-1 rounded-r-1 shadow-lg z-50 py-4"
+      className="absolute top-full right-0 mt-2 bg-primary-0 border border-n-1 rounded-r-1 shadow-lg z-50 py-4"
     >
       {children}
     </div>

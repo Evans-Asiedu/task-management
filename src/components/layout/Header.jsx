@@ -41,7 +41,7 @@ const HeaderActionBar = () => {
   return (
     <div className="flex justify-between items-center gap-3">
       {/* search box */}
-      <div className="flex items-center gap-2 bg-white border border-n-1  py-3.5 px-6 w-full md:w-[320px] h-[52px] rounded-r-1">
+      <div className="flex items-center gap-2 bg-primary-0 border border-n-1 py-3.5 px-6 w-full md:w-[320px] h-[52px] rounded-r-1">
         <input
           type="text"
           placeholder="Search tasks..."
@@ -86,7 +86,7 @@ const Header = ({
 }) => {
   return (
     <header
-      className={`bg-white p-8 flex flex-col gap-6 ${
+      className={`bg-primary-0 p-8 flex flex-col gap-6 ${
         showActions ? "h-[248px] md:h-[192px]" : "h-[148px]"
       }`}
     >

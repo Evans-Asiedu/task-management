@@ -1,11 +1,30 @@
 import UpcomingTask from "components/UpcomingTask";
-import ActivityTracker from "../ActivityTracker";
+import ActivityTracker from "components/ActivityTracker";
+import RunningTask from "../RunningTask";
+import { Calendar } from "components/Calendar";
+import TodayTask from "components/TodayTask";
 
 const Main = () => {
   return (
-    <main className="h-full">
-      <UpcomingTask />
-      <ActivityTracker></ActivityTracker>
+    <main className="h-full flex ">
+      {/* TODO: move these to overview component and improve styles  */}
+
+      <div>
+        <div className="flex flex-col md:flex-row">
+          <RunningTask />
+          <ActivityTracker />
+        </div>
+        {/* Needs to be replace with monthly mentors component */}
+        <UpcomingTask />
+        <UpcomingTask />
+      </div>
+
+      <div>
+        <div className="mt-5 ps-4 md:mt-0">
+          <Calendar />
+          <TodayTask />
+        </div>
+      </div>
     </main>
   );
 };

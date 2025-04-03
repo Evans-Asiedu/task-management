@@ -41,7 +41,7 @@ const UpcomingTask = () => {
   };
 
   return (
-    <div className="max-w-[327px] lg:max-w-[688px] mx-4">
+    <div className="max-w-[327px] lg:max-w-[688px] mx-4 mt-4">
       {/* Header */}
       <SliderHeader
         title={"Upcoming Task"}
