@@ -16,11 +16,11 @@ const data = [
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
-      <div className=" w-[65px] bg-secondary-500 py-1 px-2 rounded-lg relative ">
-        <p className="text-primary-0">
+      <div className="flex justify-center w-[60px] bg-secondary-500 py-1 rounded-r-1 relative ">
+        <p className="text-primary-0 text-sm">
           {payload[0].value} Task
         </p>
-        <div className="w-[20px] h-[20px] absolute left-6 top-4 rotate-45 -z-10 bg-secondary-500"></div>
+        <div className="w-[20px] h-[20px] absolute left-5 top-3 rotate-45 -z-10 bg-secondary-500"></div>
       </div>
     );
   }
@@ -59,21 +59,26 @@ const ActivityTracker = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+
+
   return (
 
     <>
-      <div className="mt-4 w-full max-w-md md:max-w-lg h-auto bg-n-1 flex flex-col justify-evenly items-center gap-4  rounded-r-1"
+      <div className="mt-4 w-full max-w-md md:max-w-lg h-auto bg-n-1 flex flex-col justify-evenly items-center gap-3  rounded-r-1"
         ref={chartContainerRef}
       >
-        <div className="w-full max-w-[420px] flex justify-between">
-          <h2 className="text-lg font-semibold text-secondary-500">Activity</h2>
+        <div className="w-full max-w-[420px] flex justify-between items-center">
+          <h2 className="text-base font-semibold text-secondary-500">Activity</h2>
           <div className="flex items-start justify-center gap-1.5">
-            <p className="text-secondary-500">This Week</p>
-            <i className="fa fa-angle-down fa-lg text-secondary-400 "></i>
+            <select className=" w-full border-none outline-none text-xs p-2 rounded-r-1 text-gray-500">
+              <option value="This Week">This Week</option>
+              <option value="This Week">Today</option>
+            </select>
+
           </div>
         </div>
 
-        <div className="pt-6 pb-4 pr-8 w-full max-w-[420px] h-[150px] bg-primary-0 rounded-xl">
+        <div className="pt-6 pb-4 pr-8 w-full max-w-[420px] h-[150px] bg-primary-0 rounded-r-1">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart
               data={data}
@@ -92,8 +97,13 @@ const ActivityTracker = () => {
                 </filter>
               </defs>
 
-              <XAxis dataKey="day" interval={xAxisInterval} axisLine={false} tickLine={false} padding={{ left: 10 }} />
-              <YAxis tickCount={4} interval={0} domain={[1, 'dataMax']} allowDecimals={false} axisLine={false} tickLine={false} padding={{ bottom: 10 }} />
+              <XAxis dataKey="day" interval={xAxisInterval} axisLine={false} tickLine={false} padding={{ left: 10 }} tick={{
+                fontSize: 12, // Set font size for X-axis labels
+              }} />
+
+              <YAxis tickCount={4} interval={0} domain={[1, 'dataMax']} allowDecimals={false} axisLine={false} tickLine={false} padding={{ bottom: 10 }} tick={{
+                fontSize: 12, // Set font size for X-axis labels
+              }} />
               <Tooltip content={<CustomTooltip />} cursor={false} position={tooltipPosition} />
 
               <Line type="monotone" dataKey="tasks" stroke={"var(--color-secondary-500)"}
@@ -115,3 +125,16 @@ const ActivityTracker = () => {
 
 
 export default ActivityTracker;
+
+
+
+
+
+
+
+
+
+
+
+
+
