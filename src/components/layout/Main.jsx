@@ -6,7 +6,7 @@ import TodayTask from "components/TodayTask";
 
 const Main = () => {
   return (
-    <main className="h-full flex ">
+    <main className="h-full flex bg-n-2">
       {/* TODO: move these to overview component and improve styles  */}
 
       <div>
