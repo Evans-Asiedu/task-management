@@ -1,6 +1,6 @@
 import UpcomingTask from "components/UpcomingTask";
 import ActivityTracker from "components/ActivityTracker";
-import RunningTask from "../RunningTask";
+import RunningTask from "components/RunningTask";
 import { Calendar } from "components/Calendar";
 import TodayTask from "components/TodayTask";
 

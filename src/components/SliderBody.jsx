@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import TaskCard from "./TaskCard";
+import TaskCard from "components/TaskCard";
 
 const SliderBody = ({ slides, startIndex, slidePerView }) => {
   return (
