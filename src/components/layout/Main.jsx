@@ -3,6 +3,7 @@ import ActivityTracker from "components/ActivityTracker";
 import RunningTask from "components/RunningTask";
 import { Calendar } from "components/Calendar";
 import TodayTask from "components/TodayTask";
+import MentorCard from "components/MentorCard";
 
 const Main = () => {
   return (
@@ -15,7 +16,7 @@ const Main = () => {
           <ActivityTracker />
         </div>
         {/* Needs to be replace with monthly mentors component */}
-        <UpcomingTask />
+        <MentorCard />
         <UpcomingTask />
       </div>
 
