@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { data } from "src/data";
 import SliderHeader from "components/SliderHeader";
 import SliderBody from "components/SliderBody";
+import TaskCard from "components/TaskCard";
 
 const UpcomingTask = () => {
   const tasks = data.tasks;
@@ -40,8 +41,12 @@ const UpcomingTask = () => {
     }
   };
 
+  const taskCard = (task) => {
+    return <TaskCard task={task} />;
+  };
+
   return (
-    <div className="max-w-[327px] lg:max-w-[688px] mx-4 mt-4">
+    <div className="max-w-[327px] lg:max-w-[688px] mx-4 mt-8">
       {/* Header */}
       <SliderHeader
         title={"Upcoming Task"}
@@ -56,6 +61,7 @@ const UpcomingTask = () => {
           slides={tasks}
           startIndex={startIndex}
           slidePerView={taskPerView}
+          component={taskCard}
         />
       </div>
     </div>

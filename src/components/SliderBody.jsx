@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import TaskCard from "components/TaskCard";
 
-const SliderBody = ({ slides, startIndex, slidePerView }) => {
+const SliderBody = ({ slides, startIndex, slidePerView, component }) => {
   return (
     <div
       className="flex transition-transform duration-500 ease-in-out"
@@ -11,7 +11,7 @@ const SliderBody = ({ slides, startIndex, slidePerView }) => {
     >
       {slides.map((slide) => (
         <div key={slide.id} className="mx-0 md:mx-2">
-          <TaskCard task={slide} />
+          {component(slide)}
         </div>
       ))}
     </div>

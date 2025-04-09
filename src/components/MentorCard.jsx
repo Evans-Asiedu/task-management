@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-const MentorCard = () => {
+const MentorCard = ({ mentor }) => {
   return (
-    <div className="w-[327px] h-[136px] md:h-[140px] bg-primary-0 mx-2 p-5 grid grid-cols-1 content-between">
+    <div className="w-[327px] h-[136px] md:h-[140px] bg-primary-0 p-5 grid grid-cols-1 content-between">
       <div className="flex flex-row justify-start">
         <div>
           <img src="/Profil.png" alt="" />
