@@ -2,6 +2,7 @@ import { useState } from "react";
 import { navigation } from "src/data";
 import HelpCenter from "components/HelpCenter";
 // import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Sidebar({
   isOpen: isSidebarOpen,
@@ -40,15 +41,20 @@ export default function Sidebar({
           <ul className="flex flex-col items-center gap-6 ">
             {navigation.map((item) => (
               <li key={item.path} className="self-start w-full">
-                <a
+                <Link to={item.path} className={`flex items-center gap-3 py-2.5 px-5 rounded-[10px] transition text-secondary-300 text-sm
+                      ${isActive ? "bg-n-1 text-secondary-500" : "bg-white"}
+                `}>
+                
+                {/* <a
                   href={item.path}
                   className={`flex items-center gap-3 py-2.5 px-5 rounded-[10px] transition text-secondary-300 text-sm
                       ${isActive ? "bg-n-1 text-secondary-500" : "bg-white"}
                 `}
-                >
+                > */}
                   <i className={`fa ${item.icon} fa-2x`} aria-hidden="true"></i>
                   <span>{item.title}</span>
-                </a>
+                {/* </a> */}
+                </Link>
               </li>
             ))}
           </ul>

@@ -154,9 +154,9 @@ export const data = {
 };
 
 export const navigation = [
-  { title: "Overview", icon: "fa-home", path: "/overview" },
-  { title: "Tasks", icon: "fa-tasks", path: "/tasks" },
-  { title: "Settings", icon: "fa-cog", path: "/settings" },
+  { title: "Overview", icon: "fa-home", path: "/" },
+  { title: "Tasks", icon: "fa-tasks", path: "tasks" },
+  { title: "Settings", icon: "fa-cog", path: "settings" },
 ];
 
 export const mentors = [

@@ -8,8 +8,6 @@ import MonthlyMentors from "components/MonthlyMentors";
 const Main = () => {
   return (
     <main className="h-full flex bg-n-2">
-      {/* TODO: move these to overview component and improve styles  */}
-
       <div>
         <div className="flex flex-col md:flex-row">
           <RunningTask />
