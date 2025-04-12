@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { data } from "src/data";
+import { navigation } from "src/data";
 import HelpCenter from "components/HelpCenter";
 // import { useLocation } from "react-router-dom";
 
@@ -38,7 +38,7 @@ export default function Sidebar({
         {/* Navigation */}
         <nav>
           <ul className="flex flex-col items-center gap-6 ">
-            {data.navigation.map((item) => (
+            {navigation.map((item) => (
               <li key={item.path} className="self-start w-full">
                 <a
                   href={item.path}
