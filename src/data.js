@@ -163,7 +163,7 @@ export const mentors = [
   {
     id: 601,
     name: "Alice Smith",
-    role: "Software Engineer Mentor",
+    role: "Software Engineer",
     tasks: [1, 2],
     stars: 4.5,
     reviews: 32,
@@ -173,7 +173,7 @@ export const mentors = [
   {
     id: 602,
     name: "Bob Johnson",
-    role: "Data Science Mentor",
+    role: "Data Science",
     tasks: [3, 4],
     stars: 4.8,
     reviews: 45,
@@ -183,7 +183,7 @@ export const mentors = [
   {
     id: 603,
     name: "Charlie Brown",
-    role: "Product Management Mentor",
+    role: "Product Management",
     tasks: [5, 6],
     stars: 4.2,
     reviews: 20,
@@ -193,7 +193,7 @@ export const mentors = [
   {
     id: 604,
     name: "Diana Miller",
-    role: "UX Design Mentor",
+    role: "UX Design",
     tasks: [7, 8],
     stars: 4.7,
     reviews: 28,
@@ -203,7 +203,7 @@ export const mentors = [
   {
     id: 605,
     name: "Ethan Davis",
-    role: "Mobile Development Mentor",
+    role: "Mobile Development",
     tasks: [9, 10],
     stars: 4.9,
     reviews: 50,
@@ -213,7 +213,7 @@ export const mentors = [
   {
     id: 606,
     name: "Fiona White",
-    role: "Frontend Development Mentor",
+    role: "Frontend Development",
     tasks: [11, 12],
     stars: 4.6,
     reviews: 35,
@@ -223,7 +223,7 @@ export const mentors = [
   {
     id: 607,
     name: "George Green",
-    role: "DevOps Mentor",
+    role: "DevOps",
     tasks: [1, 3],
     stars: 4.3,
     reviews: 15,
@@ -233,7 +233,7 @@ export const mentors = [
   {
     id: 608,
     name: "Hannah Taylor",
-    role: "Cybersecurity Mentor",
+    role: "Cybersecurity",
     tasks: [5, 7],
     stars: 4.8,
     reviews: 40,
@@ -243,7 +243,7 @@ export const mentors = [
   {
     id: 609,
     name: "Isaac Moore",
-    role: "AI/ML Mentor",
+    role: "AI/ML",
     tasks: [9, 11],
     stars: 4.5,
     reviews: 25,

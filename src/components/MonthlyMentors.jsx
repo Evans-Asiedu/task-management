@@ -2,10 +2,9 @@ import { useState, useEffect } from "react";
 import SliderHeader from "components/SliderHeader";
 import SliderBody from "components/SliderBody";
 import MentorCard from "components/MentorCard";
-import { data } from "src/data";
+import { mentors } from "src/data";
 
 const MonthlyMentors = () => {
-  const mentors = data.tasks;
   const [startIndex, setStartIndex] = useState(0);
   const [mentorPerView, setMentorPerView] = useState(1);
 
