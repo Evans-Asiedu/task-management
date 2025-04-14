@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Button from "components/ui/Button";
 import NotificationsButton from "src/components/NotificationsButton";
 import ProfileButton from "src/components/ProfileButton";
