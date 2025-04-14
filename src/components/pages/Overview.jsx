@@ -4,28 +4,36 @@ import RunningTask from "components/RunningTask";
 import { Calendar } from "components/Calendar";
 import TodayTask from "components/TodayTask";
 import MonthlyMentors from "components/MonthlyMentors";
+import Header from "src/components/layout/Header";
+import { data } from "src/data";
 
-const Main = () => {
+const Overview = () => {
+  const currentUserName = data.loggedInUser.name;
   return (
-    <main className="h-full flex bg-n-2">
-      <div>
-        <div className="flex flex-col md:flex-row">
-          <RunningTask />
-          <ActivityTracker />
-        </div>
-        {/* Needs to be replace with monthly mentors component */}
-        <MonthlyMentors />
-        <UpcomingTask />
-      </div>
+    <>
+      <main className="h-full flex bg-n-2">
+        <div className="flex-grow">
+          <Header
+            showActions={false}
+            title={`Hi ${currentUserName}`}
+            subText="Let's finish task today"
+          />
 
-      <div>
-        <div className="mt-5 ps-4 md:mt-0">
+          <div className="flex flex-col md:flex-row">
+            <RunningTask />
+            <ActivityTracker />
+          </div>
+          <MonthlyMentors />
+          <UpcomingTask />
+        </div>
+
+        <div className="basis-[436px] p-8">
           <Calendar />
           <TodayTask />
         </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 };
 
-export default Main;
+export default Overview;

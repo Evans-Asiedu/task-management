@@ -2,11 +2,11 @@ import { navigation } from "src/data";
 import HelpCenter from "components/HelpCenter";
 // import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useSidebar } from "src/context/SidebarContext";
 
-export default function Sidebar({
-  isOpen: isSidebarOpen,
-  setIsOpen: setIsSidebarOpen,
-}) {
+function Sidebar() {
+  const { isOpen, setIsOpen } = useSidebar();
+
   // const location = useLocation();
   // const isActive = location.pathname === item.path
   const isActive = false;
@@ -17,10 +17,10 @@ export default function Sidebar({
 
       <aside
         className={`flex flex-col fixed top-0 left-0 min-h-screen p-9 border-r border-r-n-1 bg-white transition-transform duration-300 ease-in-out z-50 ${
-          isSidebarOpen ? "translate-x-0 w-[252px]" : "-translate-x-full"
+          isOpen ? "translate-x-0 w-[252px]" : "-translate-x-full"
         } md:translate-x-0`}
       >
-        <button className="sm:hidden" onClick={() => setIsSidebarOpen(false)}>
+        <button className="sm:hidden" onClick={() => setIsOpen(false)}>
           <i
             className="fa fa-close fa-lg text-secondary-300 absolute top-3.5 right-3.5"
             aria-hidden="true"
@@ -43,16 +43,8 @@ export default function Sidebar({
                 <Link to={item.path} className={`flex items-center gap-3 py-2.5 px-5 rounded-[10px] transition text-secondary-300 text-sm
                       ${isActive ? "bg-n-1 text-secondary-500" : "bg-white"}
                 `}>
-                
-                {/* <a
-                  href={item.path}
-                  className={`flex items-center gap-3 py-2.5 px-5 rounded-[10px] transition text-secondary-300 text-sm
-                      ${isActive ? "bg-n-1 text-secondary-500" : "bg-white"}
-                `}
-                > */}
                   <i className={`fa ${item.icon} fa-2x`} aria-hidden="true"></i>
                   <span>{item.title}</span>
-                {/* </a> */}
                 </Link>
               </li>
             ))}
@@ -65,3 +57,6 @@ export default function Sidebar({
     </>
   );
 }
+
+
+export default Sidebar

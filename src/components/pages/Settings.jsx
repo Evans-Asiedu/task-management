@@ -1,9 +1,13 @@
+import Header from "src/components/layout/Header";
+
 const Settings = () => {
   return (
-    <div>
-      <h1>Settings</h1>
-      <p>This is the settings page.</p>
-    </div>
+    <>
+      <Header showActions={false} title="Settings" />
+      <main className="h-full flex bg-n-2">
+        <h1>Setting page</h1>
+      </main>
+    </>
   );
 };
 

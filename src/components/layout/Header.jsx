@@ -1,13 +1,15 @@
 import Button from "components/ui/Button";
 import NotificationsButton from "src/components/NotificationsButton";
 import ProfileButton from "src/components/ProfileButton";
+import { useSidebar } from "src/context/SidebarContext";
 
-const HeaderMain = ({
-  title,
-  subText = "",
-  isSidebarOpen,
-  setIsSidebarOpen,
-}) => {
+const HeaderMain = ({ title, subText = "" }) => {
+  const { isOpen, setIsOpen } = useSidebar();
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div className="flex flex-col-reverse md:flex-row justify-between items-center">
       <div>
@@ -19,12 +21,12 @@ const HeaderMain = ({
         )}
       </div>
 
-      <div className="flex justify-between md:justify-end items-center w-full">
+      <div className="flex justify-between md:justify-end items-center">
         <Button
           icon="fa-bars"
           iconOnly
           className="md:hidden text-secondary-300 border-n-1 z-40"
-          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+          onClick={toggleSidebar}
         />
 
         <div className="flex items-center gap-4">
@@ -85,8 +87,8 @@ const Header = ({
 }) => {
   return (
     <header
-      className={`bg-primary-0 p-8 flex flex-col gap-6 ${
-        showActions ? "h-[248px] md:h-[192px]" : "h-[148px]"
+      className={` bg-primary-0 p-8 flex flex-col gap-6 ${
+        showActions ? "h-[248px] md:h-[192px]" : "h-[116px]"
       }`}
     >
       <HeaderMain
