@@ -64,10 +64,10 @@ const ActivityTracker = () => {
 
   return (
     <div
-      className="mt-4 w-full max-w-md md:max-w-lg h-auto bg-n-1 flex flex-col justify-evenly items-center gap-3  rounded-r-1"
+      className="w-full max-w-md md:max-w-lg h-auto bg-n-1 flex flex-col  items-center gap-3 p-6 rounded-r-1"
       ref={chartContainerRef}
     >
-      <div className="w-full max-w-[420px] flex justify-between items-center">
+      <div className="w-full flex justify-between items-center">
         <h2 className="text-base font-semibold text-secondary-500">Activity</h2>
         <div className="flex items-start justify-center gap-1">
           <select className=" w-full border-none outline-none text-xs p-2 rounded-r-1 text-secondary-500">
@@ -77,7 +77,7 @@ const ActivityTracker = () => {
         </div>
       </div>
 
-      <div className="pt-6 pb-4 pr-6 w-full max-w-[420px] h-[150px] bg-primary-0 rounded-r-1">
+      <div className="pt-6 pb-4 pr-6 w-full h-[150px] bg-primary-0 rounded-r-1">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart
             data={data}

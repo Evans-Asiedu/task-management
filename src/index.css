@@ -79,7 +79,9 @@
   --rdp-day_button-width: 32px;
   --rdp-weekday-opacity: 1;
 }
-
+.rdp-months {
+  margin: 0 auto
+}
 .rdp-month_caption {
   align-items: center;
 }

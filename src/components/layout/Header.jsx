@@ -84,12 +84,13 @@ const Header = ({
   showActions = true,
   subText = "",
   title = "",
+  className = "",
 }) => {
   return (
     <header
       className={` bg-primary-0 p-8 flex flex-col gap-6 ${
         showActions ? "h-[248px] md:h-[192px]" : "h-[116px]"
-      }`}
+      } ${className}`}
     >
       <HeaderMain
         title={title}

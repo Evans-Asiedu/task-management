@@ -10,7 +10,8 @@ const TaskCard = ({ task }) => {
   ];
 
   return (
-    <div className="w-[327px] bg-primary-0 rounded-xl p-4">
+    <div className="bg-primary-0 rounded-xl p-4">
+    {/* <div className="w-[327px] bg-primary-0 rounded-xl p-4"> */}
       {/* Image Section */}
       <img
         src={task.imageUrl}
