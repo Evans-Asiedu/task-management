@@ -46,8 +46,7 @@ const UpcomingTask = () => {
   };
 
   return (
-    <div className="max-w-[327px] lg:max-w-[688px]">
-      {/* Header */}
+    <div>
       <SliderHeader
         title={"Upcoming Task"}
         onNext={handleNext}
@@ -56,14 +55,12 @@ const UpcomingTask = () => {
         current={current}
         end={end}
       />
-      <div className="overflow-hidden relative">
-        <SliderBody
-          slides={tasks}
-          startIndex={startIndex}
-          slidePerView={taskPerView}
-          component={taskCard}
-        />
-      </div>
+      <SliderBody
+        slides={tasks}
+        startIndex={startIndex}
+        slidePerView={taskPerView}
+        component={taskCard}
+      />
     </div>
   );
 };

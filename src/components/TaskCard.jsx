@@ -10,13 +10,12 @@ const TaskCard = ({ task }) => {
   ];
 
   return (
-    <div className="bg-primary-0 rounded-xl p-4">
-    {/* <div className="w-[327px] bg-primary-0 rounded-xl p-4"> */}
+    <div className=" bg-primary-0 rounded-xl p-4 ">
       {/* Image Section */}
       <img
         src={task.imageUrl}
         alt={task.title}
-        className="w-full h-32 rounded-lg object-fit"
+        className="w-[100%] h-32 rounded-lg object-fit m-2"
       />
 
       {/* Task Title & Role */}
@@ -53,7 +52,9 @@ const TaskCard = ({ task }) => {
             className="fa fa-clock-o fa-lg text-secondary-400"
             aria-hidden="true"
           ></i>
-          <span className="text-sm text-secondary-400">{timeAgo(task.createdAt)}</span>
+          <span className="text-sm text-secondary-400">
+            {timeAgo(task.createdAt)}
+          </span>
         </div>
         <div className="flex -space-x-2">
           {avatars.map((avatar, index) => (

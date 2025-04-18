@@ -45,7 +45,7 @@ const MonthlyMentors = () => {
   };
 
   return (
-    <div className="max-w-[327px] lg:max-w-[688px]">
+    <div>
       <SliderHeader
         title={"Monthly Mentors"}
         onNext={handleNext}
@@ -54,7 +54,7 @@ const MonthlyMentors = () => {
         current={current}
         end={end}
       />
-      <div className="overflow-hidden relative">
+      <div>
         <SliderBody
           slides={mentors}
           startIndex={startIndex}
