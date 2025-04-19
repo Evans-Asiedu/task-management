@@ -11,7 +11,7 @@ const Overview = () => {
   const currentUserName = data.loggedInUser.name;
   return (
     <>
-      <main className="h-full flex gap-6 lg:gap-8">
+      <main className="h-full flex ">
         <div className="flex-grow bg-n-2">
           <Header
             showActions={false}
@@ -30,7 +30,7 @@ const Overview = () => {
           </div>
         </div>
 
-        <div className="hidden lg:block p-6 lg:p-8 space-y-6 lg:space-y-8 bg-n-1">
+        <div className="hidden xl:flex flex-col p-6 lg:p-8 gap-6 xl:gap-8 bg-n-1 min-w-[372px]">
           <Calendar />
           <TodayTask />
         </div>

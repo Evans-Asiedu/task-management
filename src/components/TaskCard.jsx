@@ -1,6 +1,6 @@
 import { timeAgo } from "src/utils/formatDate";
 
-const TaskCard = ({ task }) => {
+const TaskCard = ({ task, className="" }) => {
   const avatars = [
     "/avatar1.png",
     "/avatar2.png",
@@ -10,12 +10,12 @@ const TaskCard = ({ task }) => {
   ];
 
   return (
-    <div className=" bg-primary-0 rounded-xl p-4 ">
+    <div className={`bg-primary-0 rounded-r-1 p-4 ${className}`} >
       {/* Image Section */}
       <img
         src={task.imageUrl}
         alt={task.title}
-        className="w-[100%] h-32 rounded-lg object-fit m-2"
+        className="w-full rounded-r-1 object-fit"
       />
 
       {/* Task Title & Role */}
@@ -25,7 +25,7 @@ const TaskCard = ({ task }) => {
       {/* Progress Bar */}
       <div className="mt-3">
         <div className="flex justify-between items-center">
-          <p className="text-sm font-medium">Progress</p>
+          <p className="text-sm">Progress</p>
           <span className="text-primary-500 text-sm font-medium">90%</span>
         </div>
 
@@ -52,7 +52,7 @@ const TaskCard = ({ task }) => {
             className="fa fa-clock-o fa-lg text-secondary-400"
             aria-hidden="true"
           ></i>
-          <span className="text-sm text-secondary-400">
+          <span className="text-xs text-secondary-400">
             {timeAgo(task.createdAt)}
           </span>
         </div>

@@ -3,7 +3,7 @@ import React, { Component } from "react";
 const MentorCard = ({ mentor }) => {
   const { name, role, tasks, stars, reviews } = mentor;
   return (
-    <div className="bg-primary-0">
+    <div className="bg-primary-0 rounded-r-1">
       <div className="h-[140px] flex flex-col justify-between p-4">
         <div className="flex justify-between">
           <div className="flex">
@@ -19,7 +19,7 @@ const MentorCard = ({ mentor }) => {
             + Follow
           </button>
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-between text-secondary-500 text-sm">
           <span>
             <i className="fa fa-book me-2 inline" aria-hidden="true"></i>
             <p className="inline">{tasks.length} tasks</p>
