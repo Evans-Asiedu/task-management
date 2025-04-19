@@ -45,7 +45,7 @@ const HeaderActionBar = () => {
       <div className="flex items-center gap-2 bg-primary-0 border border-n-1 py-3.5 px-6 w-full md:w-[320px] h-[52px] rounded-r-1">
         <input
           type="text"
-          placeholder="Search tasks..."
+          placeholder="Search..."
           className="bg-transparent outline-none w-full text-secondary-400 text-xs"
         />
         <i className="fa fa-search text-secondary-300"></i>

@@ -156,6 +156,7 @@ export const data = {
 export const navigation = [
   { title: "Overview", icon: "fa-home", path: "/" },
   { title: "Tasks", icon: "fa-tasks", path: "tasks" },
+  { title: "Mentors", icon: "fa-user-circle", path: "mentors" },
   { title: "Settings", icon: "fa-cog", path: "settings" },
 ];
 
