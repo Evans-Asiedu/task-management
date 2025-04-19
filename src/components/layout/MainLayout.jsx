@@ -5,7 +5,7 @@ const MainLayout = () => {
   return (
     <>
       <Sidebar />
-      <div className="flex flex-col flex-1 transition-all duration-300 ease-in-out min-h-screen md:ml-[252px]">
+      <div className="flex flex-col flex-1 transition-all duration-300 ease-in-out min-h-screen md:ml-[252px] max-w-7xl">
         <Outlet />
       </div>
     </>

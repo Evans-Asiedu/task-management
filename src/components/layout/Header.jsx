@@ -11,9 +11,9 @@ const HeaderMain = ({ title, subText = "" }) => {
   };
 
   return (
-    <div className="flex flex-col-reverse md:flex-row justify-between items-center">
-      <div>
-        <h1 className="text-2xl font-semibold text-secondary-500 self-start md:self-center">
+    <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-4">
+      <div className="w-full">
+        <h1 className="text-2xl font-semibold text-secondary-500 text-left">
           {title}
         </h1>
         {subText && (
@@ -21,7 +21,7 @@ const HeaderMain = ({ title, subText = "" }) => {
         )}
       </div>
 
-      <div className="flex justify-between md:justify-end items-center">
+      <div className="flex justify-between md:justify-end items-center w-full">
         <Button
           icon="fa-bars"
           iconOnly
@@ -89,7 +89,7 @@ const Header = ({
   return (
     <header
       className={` bg-primary-0 p-8 flex flex-col gap-6 ${
-        showActions ? "h-[248px] md:h-[192px]" : "h-[116px]"
+        showActions ? "h-[248px] md:h-[192px]" : "min-h-[116px]"
       } ${className}`}
     >
       <HeaderMain

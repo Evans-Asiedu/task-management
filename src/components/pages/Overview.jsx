@@ -11,7 +11,7 @@ const Overview = () => {
   const currentUserName = data.loggedInUser.name;
   return (
     <>
-      <main className="h-full flex ">
+      <main className="h-full flex">
         <div className="flex-grow bg-n-2">
           <Header
             showActions={false}
@@ -20,8 +20,8 @@ const Overview = () => {
             className="!bg-n-2"
           />
 
-          <div className="p-6 lg:p-8 space-y-6 lg:space-y-8">
-            <div className="flex flex-col md:flex-row gap-8">
+          <div className="px-6 lg:px-8 space-y-6 lg:space-y-8">
+            <div className="flex flex-col md:flex-row gap-8 grow">
               <RunningTask />
               <ActivityTracker />
             </div>
