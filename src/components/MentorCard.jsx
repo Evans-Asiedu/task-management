@@ -1,7 +1,10 @@
 import React, { Component } from "react";
+import { data } from "src/data";
 
 const MentorCard = ({ mentor }) => {
-  const { name, role, tasks, stars, reviews } = mentor;
+  const { id, name, role, tasks, stars, reviews } = mentor;
+  const { following } = data.loggedInUser;
+
   return (
     <div className="bg-primary-0 rounded-r-1">
       <div className="h-[140px] flex flex-col justify-between p-4">
@@ -15,8 +18,12 @@ const MentorCard = ({ mentor }) => {
               </p>
             </span>
           </div>
-          <button className="font-semibold text-primary-500 cursor-pointer hover:text-primary-300">
-            + Follow
+          <button
+            className={`cursor-pointer hover:text-primary-300  ${
+              following.includes(id) ? "text-secondary-400" : "text-primary-500"
+            }`}
+          >
+            {following.includes(id) ? "following" : "+ follow"}
           </button>
         </div>
         <div className="flex justify-between text-secondary-500 text-sm">
