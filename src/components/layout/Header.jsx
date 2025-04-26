@@ -88,7 +88,7 @@ const Header = ({
 }) => {
   return (
     <header
-      className={` bg-primary-0 p-8 flex flex-col gap-6 ${
+      className={` bg-primary-0 p-6 lg:p-8 flex flex-col gap-6 ${
         showActions ? "h-[248px] md:h-[192px]" : "min-h-[116px]"
       } ${className}`}
     >
