@@ -1,94 +1,254 @@
 export const data = {
-    "loggedInUser": {
-      "id": 12345,
-      "name": "Jane Doe",
-      "email": "janedoe@example.com",
-      "avatar": "https://example.com/avatar.jpg",
-      "role": "admin",
-      "preferences": {
-        "theme": "light",
-        "language": "en",
-        "notificationsEnabled": true,
-        "timezone": "+3:00",
-        "timeFormat": "UTC",
-        "timezoneFormat": "24h"
-      }
+  loggedInUser: {
+    id: 12345,
+    name: "Jane Doe",
+    email: "janedoe@example.com",
+    avatar: "/Profil.png",
+    role: "admin",
+    following: [601, 602],
+    preferences: {
+      theme: "light",
+      language: "en",
+      notificationsEnabled: true,
+      timezone: "+3:00",
+      timeFormat: "UTC",
+      timezoneFormat: "24h",
     },
-    "notifications": [
-      {
-        "id": 1,
-        "type": "message",
-        "description": "You have a new message from Alice.",
-        "timestamp": "2025-03-06T12:00:00Z",
-        "read": false
-      },
-      {
-        "id": 2,
-        "type": "system",
-        "description": "Your password will expire in 3 days.",
-        "timestamp": "2025-03-05T15:30:00Z",
-        "read": true
-      },
-      {
-        "id": 3,
-        "type": "reminder",
-        "description": "Meeting with the team at 2 PM.",
-        "timestamp": "2025-03-06T09:00:00Z",
-        "read": false
-      }
-    ],
-    "navigation":
-      [
-        { "title": "Overview", "icon": "home", "path": "/overview" },
-        { "title": "Taks", "icon": "task", "path": "/tasks" },
-        { "title": "Settings", "icon": "settings", "path": "/settings" }
-      ],
-    "tasks": [
-      {
-        "id": 101,
-        "createdAt": "2025-03-06T08:45:00Z",
-        "imageUrl": "/Image.png",
-        "category": "Work",
-        "tag": "Urgent",
-        "title": "Prepare project presentation",
-        "description": "Create slides and practice presentation for tomorrow's meeting."
-      },
-      {
-        "id": 102,
-        "createdAt": "2025-03-05T14:20:00Z",
-        "imageUrl": "/Image1.png",
-        "category": "Personal",
-        "tag": "Important",
-        "title": "Buy groceries",
-        "description": "Need to buy vegetables, milk, and bread for the week."
-      },
-      {
-        "id": 103,
-        "createdAt": "2025-03-04T10:10:00Z",
-        "imageUrl": "/Image2.png",
-        "category": "Learning",
-        "tag": "Medium",
-        "title": "Read JavaScript book",
-        "description": "Finish Chapter 5 and practice examples from the book."
-      },
-      {
-        "id": 104,
-        "createdAt": "2025-03-04T10:10:00Z",
-        "imageUrl": "/Image3.png",
-        "category": "Learning",
-        "tag": "Medium",
-        "title": "Read JavaScript book again",
-        "description": "Finish Chapter 6 and practice examples from the book."
-      },
-      {
-        "id": 105,
-        "createdAt": "2025-03-04T10:10:00Z",
-        "imageUrl": "/Image4.png",
-        "category": "Learning",
-        "tag": "Medium",
-        "title": "Read React book",
-        "description": "Finish Chapter 3 and practice examples from the book."
-      }
-    ]
-  }
-  
+  },
+  notifications: [
+    {
+      id: 1,
+      type: "message",
+      description: "You have a new message from Alice.",
+      timestamp: "2025-03-06T12:00:00Z",
+      read: false,
+    },
+    {
+      id: 2,
+      type: "system",
+      description: "Your password will expire in 3 days.",
+      timestamp: "2025-03-05T15:30:00Z",
+      read: true,
+    },
+    {
+      id: 3,
+      type: "reminder",
+      description: "Meeting with the team at 2 PM.",
+      timestamp: "2025-03-06T09:00:00Z",
+      read: false,
+    },
+  ],
+  tasks: [
+    {
+      id: 1,
+      createdAt: "2025-03-06T08:45:00Z",
+      imageUrl: "/Image.png",
+      category: "Work",
+      tag: "Urgent",
+      title: "Draft initial project proposal",
+      description: "Outline the project's objectives, scope, and deliverables.",
+    },
+    {
+      id: 2,
+      createdAt: "2025-03-05T14:20:00Z",
+      imageUrl: "/Image3.png",
+      category: "Personal",
+      tag: "Important",
+      title: "Schedule dentist appointment",
+      description: "Book a check-up appointment with the dentist.",
+    },
+    {
+      id: 3,
+      createdAt: "2025-03-04T10:10:00Z",
+      imageUrl: "/Image2.png",
+      category: "Learning",
+      tag: "Medium",
+      title: "Complete online JavaScript course",
+      description: "Finish the remaining modules of the JavaScript course.",
+    },
+    {
+      id: 4,
+      createdAt: "2025-03-03T16:30:00Z",
+      imageUrl: "/Image3.png",
+      category: "Work",
+      tag: "High",
+      title: "Review team's code submissions",
+      description:
+        "Provide feedback on the code submitted by the team members.",
+    },
+    {
+      id: 5,
+      createdAt: "2025-03-02T09:15:00Z",
+      imageUrl: "/Image4.png",
+      category: "Personal",
+      tag: "Low",
+      title: "Plan weekend getaway",
+      description:
+        "Research and plan a short getaway for the upcoming weekend.",
+    },
+    {
+      id: 6,
+      createdAt: "2025-03-01T11:45:00Z",
+      imageUrl: "/Image.png",
+      category: "Work",
+      tag: "Medium",
+      title: "Prepare quarterly report",
+      description: "Compile data and prepare the quarterly performance report.",
+    },
+    {
+      id: 7,
+      createdAt: "2025-02-28T13:00:00Z",
+      imageUrl: "/Image1.png",
+      category: "Learning",
+      tag: "High",
+      title: "Attend web development webinar",
+      description:
+        "Participate in the online webinar on modern web development.",
+    },
+    {
+      id: 8,
+      createdAt: "2025-02-27T15:40:00Z",
+      imageUrl: "/Image2.png",
+      category: "Personal",
+      tag: "Medium",
+      title: "Renew gym membership",
+      description: "Renew the expiring gym membership for continued access.",
+    },
+    {
+      id: 9,
+      createdAt: "2025-02-26T10:00:00Z",
+      imageUrl: "/Image3.png",
+      category: "Work",
+      tag: "Urgent",
+      title: "Troubleshoot server issues",
+      description: "Identify and resolve the ongoing server issues.",
+    },
+    {
+      id: 10,
+      createdAt: "2025-02-25T14:30:00Z",
+      imageUrl: "/Image4.png",
+      category: "Personal",
+      tag: "Important",
+      title: "Pay utility bills",
+      description: "Settle the outstanding electricity and water bills.",
+    },
+    {
+      id: 11,
+      createdAt: "2025-02-24T12:00:00Z",
+      imageUrl: "/Image.png",
+      category: "Work",
+      tag: "Medium",
+      title: "Update project documentation",
+      description: "Revise and update the project's documentation.",
+    },
+    {
+      id: 12,
+      createdAt: "2025-02-23T08:00:00Z",
+      imageUrl: "/Image1.png",
+      category: "Learning",
+      tag: "Low",
+      title: "Practice coding challenges",
+      description: "Solve coding challenges to improve problem-solving skills.",
+    },
+  ],
+};
+
+export const navigation = [
+  { title: "Overview", icon: "fa-home", path: "/" },
+  { title: "Tasks", icon: "fa-tasks", path: "/tasks" },
+  { title: "Mentors", icon: "fa-user-circle", path: "/mentors" },
+  { title: "Settings", icon: "fa-cog", path: "/settings" },
+];
+
+export const mentors = [
+  {
+    id: 601,
+    name: "Alice Smith",
+    role: "Software Engineer",
+    tasks: [1, 2],
+    stars: 4.5,
+    reviews: 32,
+    bio: "Experienced software engineer specializing in backend development.",
+    dateJoined: "2024-01-15",
+  },
+  {
+    id: 602,
+    name: "Bob Johnson",
+    role: "Data Science",
+    tasks: [3, 4],
+    stars: 4.8,
+    reviews: 45,
+    bio: "Passionate data scientist with expertise in machine learning algorithms.",
+    dateJoined: "2023-11-20",
+  },
+  {
+    id: 603,
+    name: "Charlie Brown",
+    role: "Product Management",
+    tasks: [5, 6],
+    stars: 4.2,
+    reviews: 20,
+    bio: "Product leader with a proven track record of launching successful products.",
+    dateJoined: "2024-02-01",
+  },
+  {
+    id: 604,
+    name: "Diana Miller",
+    role: "UX Design",
+    tasks: [7, 8],
+    stars: 4.7,
+    reviews: 28,
+    bio: "Creative UX designer focused on user-centered design principles.",
+    dateJoined: "2024-03-10",
+  },
+  {
+    id: 605,
+    name: "Ethan Davis",
+    role: "Mobile Development",
+    tasks: [9, 10],
+    stars: 4.9,
+    reviews: 50,
+    bio: "Mobile app developer with expertise in iOS and Android platforms.",
+    dateJoined: "2023-12-01",
+  },
+  {
+    id: 606,
+    name: "Fiona White",
+    role: "Frontend Development",
+    tasks: [11, 12],
+    stars: 4.6,
+    reviews: 35,
+    bio: "Frontend developer passionate about creating engaging web experiences.",
+    dateJoined: "2024-01-25",
+  },
+  {
+    id: 607,
+    name: "George Green",
+    role: "DevOps",
+    tasks: [1, 3],
+    stars: 4.3,
+    reviews: 15,
+    bio: "DevOps engineer specializing in automation and cloud infrastructure.",
+    dateJoined: "2024-02-15",
+  },
+  {
+    id: 608,
+    name: "Hannah Taylor",
+    role: "Cybersecurity",
+    tasks: [5, 7],
+    stars: 4.8,
+    reviews: 40,
+    bio: "Cybersecurity expert dedicated to protecting digital assets and data.",
+    dateJoined: "2023-11-10",
+  },
+  {
+    id: 609,
+    name: "Isaac Moore",
+    role: "AI/ML",
+    tasks: [9, 11],
+    stars: 4.5,
+    reviews: 25,
+    bio: "AI/ML researcher focused on developing innovative machine learning solutions.",
+    dateJoined: "2024-03-01",
+  },
+];
