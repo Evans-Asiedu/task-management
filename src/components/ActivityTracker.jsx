@@ -68,7 +68,7 @@ const ActivityTracker = () => {
 
   return (
     <>
-      <div className="mt-4 w-full max-w-md md:max-w-lg h-auto bg-n-1 flex flex-col justify-evenly items-center gap-3  rounded-r-1"
+      <div className="mt-4 w-full max-w-md md:max-w-lg h-auto bg-n-1 flex flex-col justify-evenly items-center gap-2  rounded-r-1"
         ref={chartContainerRef}
       >
         <div className="w-full max-w-[420px] flex justify-between items-center">
