@@ -1,18 +1,19 @@
-import { useState } from "react";
 import Button from "components/ui/Button";
 import NotificationsButton from "src/components/NotificationsButton";
 import ProfileButton from "src/components/ProfileButton";
+import { useSidebar } from "src/context/SidebarContext";
 
-const HeaderMain = ({
-  title,
-  subText = "",
-  isSidebarOpen,
-  setIsSidebarOpen,
-}) => {
+const HeaderMain = ({ title, subText = "" }) => {
+  const { isOpen, setIsOpen } = useSidebar();
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div className="flex flex-col-reverse md:flex-row justify-between items-center">
-      <div>
-        <h1 className="text-2xl font-semibold text-secondary-500 self-start md:self-center">
+    <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-4">
+      <div className="w-full">
+        <h1 className="text-2xl font-semibold text-secondary-500 text-left">
           {title}
         </h1>
         {subText && (
@@ -25,7 +26,7 @@ const HeaderMain = ({
           icon="fa-bars"
           iconOnly
           className="md:hidden text-secondary-300 border-n-1 z-40"
-          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+          onClick={toggleSidebar}
         />
 
         <div className="flex items-center gap-4">
@@ -44,7 +45,7 @@ const HeaderActionBar = () => {
       <div className="flex items-center gap-2 bg-primary-0 border border-n-1 py-3.5 px-6 w-full md:w-[320px] h-[52px] rounded-r-1">
         <input
           type="text"
-          placeholder="Search tasks..."
+          placeholder="Search..."
           className="bg-transparent outline-none w-full text-secondary-400 text-xs"
         />
         <i className="fa fa-search text-secondary-300"></i>
@@ -83,12 +84,13 @@ const Header = ({
   showActions = true,
   subText = "",
   title = "",
+  className = "",
 }) => {
   return (
     <header
-      className={`bg-primary-0 p-8 flex flex-col gap-6 ${
-        showActions ? "h-[248px] md:h-[192px]" : "h-[148px]"
-      }`}
+      className={` bg-primary-0 p-6 lg:p-8 flex flex-col gap-6 ${
+        showActions ? "h-[248px] md:h-[192px]" : "min-h-[116px]"
+      } ${className}`}
     >
       <HeaderMain
         title={title}
