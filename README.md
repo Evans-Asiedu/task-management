@@ -45,14 +45,11 @@ npm run dev
 ```
 
 ## 🤝 How to Start Collaborating
-1. Fork the Repository
-Click on the Fork button on the top-right of the repo page to make your own copy.
-
-2. Clone Your Fork
+2. Clone the repo
 ```bash
-git clone https://github.com/your-username/task-management.git
+git clone https://github.com/Evans-Asiedu/task-management.git
 ```
-3. Create a Branch
+3. Create a Branch from main
 Create a new branch for your feature or fix:
 ```bash
 git checkout -b feature/your-feature-name
@@ -63,11 +60,11 @@ After making your changes, commit them with a clear message:
 git commit -m "Add: your description"
 ```
 5. Push & Create Pull Request
-Push your changes and open a Pull Request from your fork to the main repository:
+Push your branch to the main repository:
 ```bash
 git push origin feature/your-feature-name
 ```
-Go to the original repo and create a Pull Request from your branch.
+Then go to the GitHub repository and create a Pull Request from your branch to the main branch.
 
 6. Communicate
 We value open, respectful communication. Share your questions, suggestions, or blockers in our project chat [on Discord]()
