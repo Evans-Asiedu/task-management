@@ -47,6 +47,8 @@ export const data = {
       tag: "Urgent",
       title: "Draft initial project proposal",
       description: "Outline the project's objectives, scope, and deliverables.",
+      assignees: ["/avatar4.png", "/avatar5.png"],
+      progress: 50,
     },
     {
       id: 2,
@@ -56,6 +58,13 @@ export const data = {
       tag: "Important",
       title: "Schedule dentist appointment",
       description: "Book a check-up appointment with the dentist.",
+      assignees: [
+        "/avatar1.png",
+        "/avatar2.png",
+        "/avatar3.png",
+        "/avatar5.png",
+      ],
+      progress: 90,
     },
     {
       id: 3,
@@ -65,6 +74,13 @@ export const data = {
       tag: "Medium",
       title: "Complete online JavaScript course",
       description: "Finish the remaining modules of the JavaScript course.",
+      assignees: [
+        "/avatar1.png",
+        "/avatar2.png",
+        "/avatar3.png",
+        "/avatar4.png",
+      ],
+      progress: 80,
     },
     {
       id: 4,
@@ -75,6 +91,13 @@ export const data = {
       title: "Review team's code submissions",
       description:
         "Provide feedback on the code submitted by the team members.",
+      assignees: [
+        "/avatar1.png",
+        "/avatar2.png",
+        "/avatar4.png",
+        "/avatar5.png",
+      ],
+      progress: 25,
     },
     {
       id: 5,
@@ -85,6 +108,8 @@ export const data = {
       title: "Plan weekend getaway",
       description:
         "Research and plan a short getaway for the upcoming weekend.",
+      assignees: ["/avatar3.png", "/avatar4.png", "/avatar5.png"],
+      progress: 30,
     },
     {
       id: 6,
@@ -94,6 +119,14 @@ export const data = {
       tag: "Medium",
       title: "Prepare quarterly report",
       description: "Compile data and prepare the quarterly performance report.",
+      assignees: [
+        "/avatar1.png",
+        "/avatar2.png",
+        "/avatar3.png",
+        "/avatar4.png",
+        "/avatar5.png",
+      ],
+      progress: 60,
     },
     {
       id: 7,
@@ -104,6 +137,13 @@ export const data = {
       title: "Attend web development webinar",
       description:
         "Participate in the online webinar on modern web development.",
+      assignees: [
+        "/avatar1.png",
+        "/avatar2.png",
+        "/avatar4.png",
+        "/avatar5.png",
+      ],
+      progress: 80,
     },
     {
       id: 8,
@@ -113,6 +153,14 @@ export const data = {
       tag: "Medium",
       title: "Renew gym membership",
       description: "Renew the expiring gym membership for continued access.",
+      assignees: [
+        "/avatar1.png",
+        "/avatar2.png",
+        "/avatar3.png",
+        "/avatar4.png",
+        "/avatar5.png",
+      ],
+      progress: 75,
     },
     {
       id: 9,
@@ -122,6 +170,8 @@ export const data = {
       tag: "Urgent",
       title: "Troubleshoot server issues",
       description: "Identify and resolve the ongoing server issues.",
+      assignees: ["/avatar1.png", "/avatar2.png", "/avatar5.png"],
+      progress: 80,
     },
     {
       id: 10,
@@ -131,6 +181,8 @@ export const data = {
       tag: "Important",
       title: "Pay utility bills",
       description: "Settle the outstanding electricity and water bills.",
+      assignees: ["/avatar1.png", "/avatar2.png", "/avatar3.png"],
+      progress: 80,
     },
     {
       id: 11,
@@ -140,6 +192,13 @@ export const data = {
       tag: "Medium",
       title: "Update project documentation",
       description: "Revise and update the project's documentation.",
+      assignees: [
+        "/avatar2.png",
+        "/avatar3.png",
+        "/avatar4.png",
+        "/avatar5.png",
+      ],
+      progress: 90,
     },
     {
       id: 12,
@@ -149,6 +208,8 @@ export const data = {
       tag: "Low",
       title: "Practice coding challenges",
       description: "Solve coding challenges to improve problem-solving skills.",
+      assignees: ["/avatar1.png", "/avatar2.png", "/avatar5.png"],
+      progress: 70,
     },
   ],
 };
@@ -252,3 +313,30 @@ export const mentors = [
     dateJoined: "2024-03-01",
   },
 ];
+
+export const runningTasks = {
+  allTasks: 100,
+  running: 65,
+  remainingTasks: 45,
+};
+
+export const activityTracker = {
+  today: [
+    { day: "S", tasks: 1 },
+    { day: "M", tasks: 2 },
+    { day: "T", tasks: 1 },
+    { day: "W", tasks: 2 },
+    { day: "T", tasks: 3 },
+    { day: "F", tasks: 2 },
+    { day: "S", tasks: 2 },
+  ],
+  week: [
+    { day: "S", tasks: 3 },
+    { day: "M", tasks: 2 },
+    { day: "T", tasks: 3 },
+    { day: "W", tasks: 1 },
+    { day: "T", tasks: 3 },
+    { day: "F", tasks: 2 },
+    { day: "S", tasks: 1 },
+  ],
+};
