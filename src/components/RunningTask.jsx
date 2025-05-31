@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
+import { runningTasks } from "src/data";
 
 const RunningTask = () => {
-  const [progress, setProgress] = useState(45);
-  const size = 70;
+  const size = 75;
   const strokeWidth = 5;
   const radius = (size - strokeWidth) / 2;
   const circumference = 2 * Math.PI * radius;
-  const offset = circumference - (progress / 100) * circumference;
+  const offset = circumference - (runningTasks.remainingTasks / 100) * circumference;
+
 
   return (
     <div className="flex md:flex-col justify-between p-6 bg-secondary-900 text-white rounded-lg transition duration-500">
@@ -14,7 +15,7 @@ const RunningTask = () => {
         <h2 className="text-base font-semibold text-primary-0 ">
           Running Task
         </h2>
-        <h2 className="text-3xl font-semibold text-primary-0 ">65</h2>
+        <h2 className="text-3xl font-semibold text-primary-0 ">{runningTasks.running}</h2>
       </div>
 
       <div className="flex items-center justify-between gap-5">
@@ -43,12 +44,12 @@ const RunningTask = () => {
           {/* Progress Text */}
           <div className="absolute text-center">
             <span className="text-lg font-medium  text-primary-0">
-              {progress}%
+              {runningTasks.remainingTasks}%
             </span>
           </div>
         </div>
         <div className="flex flex-col justify-center items-center">
-          <h2 className="text-xl font-semibold">100</h2>
+          <h2 className="text-xl font-semibold">{runningTasks.allTasks}</h2>
           <p className="text-base font-medium text-secondary-300 ">Task</p>
         </div>
       </div>

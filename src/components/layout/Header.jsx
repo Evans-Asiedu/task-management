@@ -1,5 +1,6 @@
 import Button from "components/ui/Button";
 import NotificationsButton from "src/components/NotificationsButton";
+import FilterButton from "../FilterButton";
 import ProfileButton from "src/components/ProfileButton";
 import { useSidebar } from "src/context/SidebarContext";
 
@@ -59,13 +60,14 @@ const HeaderActionBar = () => {
           className="md:hidden text-secondary-300 border-n-1"
         />
 
-        <div className="hidden md:flex gap-6">
-          <Button
+        <div className="hidden md:flex gap-6 items-center">
+          {/* <Button
             icon="fa-filter"
             className="text-secondary-500 border-n-1 text-xs font-semibold [&>i]:text-secondary-300"
           >
             Category
-          </Button>
+          </Button> */}
+          <FilterButton></FilterButton>
           <Button
             icon="fa-sort"
             className="text-secondary-500 border-n-1 text-xs font-semibold [&>i]:text-secondary-300"
@@ -88,9 +90,8 @@ const Header = ({
 }) => {
   return (
     <header
-      className={` bg-primary-0 p-6 lg:p-8 flex flex-col gap-6 ${
-        showActions ? "h-[248px] md:h-[192px]" : "min-h-[116px]"
-      } ${className}`}
+      className={` bg-primary-0 p-6 lg:p-8 flex flex-col gap-6 ${showActions ? "h-[248px] md:h-[192px]" : "min-h-[116px]"
+        } ${className}`}
     >
       <HeaderMain
         title={title}
