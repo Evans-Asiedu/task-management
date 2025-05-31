@@ -4,26 +4,29 @@ import SliderHeader from "components/SliderHeader";
 import SliderBody from "components/SliderBody";
 import TaskCard from "components/TaskCard";
 
-const UpcomingTask = () => {
+const UpcomingTask = ({ taskPerViewOverride,sliderHeaderProps }) => {
   const tasks = data.tasks;
   const [startIndex, setStartIndex] = useState(0);
-  const [taskPerView, setTaskPerView] = useState(1);
+  const [taskPerView, setTaskPerView] = useState(taskPerViewOverride || 1);
 
   // function to check screen size
   useEffect(() => {
-    const updateTaskPerView = () => {
-      if (window.matchMedia("(min-width: 1024px)").matches) {
-        setTaskPerView(2);
-      } else {
-        setTaskPerView(1);
+    const updateTaskPerView = () =>{
+      const isLargeScreen = window.matchMedia("(min-width:1024px)").matches;
+
+      if (isLargeScreen && taskPerViewOverride) {
+        setTaskPerView(taskPerViewOverride)
+      }else{
+        setTaskPerView(1)
       }
-    };
+    }
+    
 
     updateTaskPerView();
     window.addEventListener("resize", updateTaskPerView);
 
     return () => window.removeEventListener("resize", updateTaskPerView);
-  }, []);
+  }, [taskPerViewOverride]);
 
   const start = startIndex + 1;
   const current = startIndex + taskPerView;
@@ -54,6 +57,7 @@ const UpcomingTask = () => {
         start={start}
         current={current}
         end={end}
+        {...sliderHeaderProps}
       />
       <SliderBody
         slides={tasks}
