@@ -1,12 +1,18 @@
 import React from "react";
-import { runningTasks } from "src/data";
+import { data } from "src/data";
 
 const RunningTask = () => {
+  const totalTasks = data?.tasks?.length || 0;
+  const runningTask = data.tasks.filter((task) => task.progress < 100).length || 0;
+  const completedTasks = data.tasks.filter((task) => task.progress === 100).length || 0;
+  const runningPercent = runningTask ? Math.round((runningTask / totalTasks) * 100) : 0;
+
+  //const [progress, setProgress] = useState(45);
   const size = 75;
   const strokeWidth = 5;
   const radius = (size - strokeWidth) / 2;
   const circumference = 2 * Math.PI * radius;
-  const offset = circumference - (runningTasks.remainingTasks / 100) * circumference;
+  const offset = circumference - (runningPercent / 100) * circumference;
 
 
   return (
@@ -15,7 +21,7 @@ const RunningTask = () => {
         <h2 className="text-base font-semibold text-primary-0 ">
           Running Task
         </h2>
-        <h2 className="text-3xl font-semibold text-primary-0 ">{runningTasks.running}</h2>
+        <h2 className="text-3xl font-semibold text-primary-0 ">{runningTask}</h2>
       </div>
 
       <div className="flex items-center justify-between gap-5">
@@ -44,12 +50,12 @@ const RunningTask = () => {
           {/* Progress Text */}
           <div className="absolute text-center">
             <span className="text-lg font-medium  text-primary-0">
-              {runningTasks.remainingTasks}%
+              {runningPercent}%
             </span>
           </div>
         </div>
         <div className="flex flex-col justify-center items-center">
-          <h2 className="text-xl font-semibold">{runningTasks.allTasks}</h2>
+          <h2 className="text-xl font-semibold">{totalTasks}</h2>
           <p className="text-base font-medium text-secondary-300 ">Task</p>
         </div>
       </div>
