@@ -8,15 +8,9 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const data = [
-  { day: "S", tasks: 1 },
-  { day: "M", tasks: 2 },
-  { day: "T", tasks: 1 },
-  { day: "W", tasks: 2 },
-  { day: "T", tasks: 3 },
-  { day: "F", tasks: 2 },
-  { day: "S", tasks: 2 },
-];
+import { activityTracker } from "src/data";
+
+
 
 // Custom Tooltip Component
 const CustomTooltip = ({ active, payload }) => {
@@ -36,6 +30,8 @@ const ActivityTracker = () => {
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
   const [xAxisInterval, setXAxisInterval] = useState(0); // Control Y-axis interval
   const chartContainerRef = useRef(null);
+  const [range, setRange] = useState("week");
+
 
   // Track chart container width and adjust Y-axis interval
   useEffect(() => {
@@ -70,9 +66,13 @@ const ActivityTracker = () => {
       <div className="w-full flex justify-between items-center">
         <h2 className="text-base font-semibold text-secondary-500">Activity</h2>
         <div className="flex items-start justify-center gap-1">
-          <select className=" w-full border-none outline-none text-xs p-2 rounded-r-1 text-secondary-500">
-            <option value="This Week">This Week</option>
-            <option value="This Week">Today</option>
+          <select
+            onChange={(e) => setRange(e.target.value)}
+            className=" w-full border-none outline-none text-xs p-2 rounded-r-1 text-secondary-500"
+
+          >
+            <option value="week">This Week</option>
+            <option value="today">Today</option>
           </select>
         </div>
       </div>
@@ -80,7 +80,7 @@ const ActivityTracker = () => {
       <div className="pt-6 pb-4 pr-6 w-full h-[150px] bg-primary-0 rounded-r-1">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart
-            data={data}
+            data={activityTracker[range]}
             margin={{ top: 10, right: 10 }}
             onMouseMove={(e) => {
               if (e.activePayload?.length) {
