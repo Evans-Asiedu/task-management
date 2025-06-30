@@ -1,46 +1,42 @@
 import { timeAgo } from "src/utils/formatDate";
 
-const TaskCard = ({ task, className="" }) => {
-  const avatars = [
-    "/avatar1.png",
-    "/avatar2.png",
-    "/avatar3.png",
-    "/avatar4.png",
-    "/avatar5.png",
-  ];
+const TaskCard = ({ task, className = "" }) => {
+  const { title, imageUrl, category, progress, createdAt, assignees } = task;
 
   return (
-    <div className={`bg-primary-0 rounded-r-1 p-4 ${className}`} >
+    <div className={`bg-primary-0 rounded-r-1 p-4 ${className}`}>
       {/* Image Section */}
       <img
-        src={task.imageUrl}
-        alt={task.title}
+        src={imageUrl}
+        alt={title}
         className="w-full rounded-r-1 object-fit"
       />
 
       {/* Task Title & Role */}
-      <h3 className="text-md font-semibold mt-3">{task.title}</h3>
-      <p className="text-secondary-400 text-sm">{task.category}</p>
+      <h3 className="text-md font-semibold mt-3">{title}</h3>
+      <p className="text-secondary-400 text-sm">{category}</p>
 
       {/* Progress Bar */}
       <div className="mt-3">
         <div className="flex justify-between items-center">
           <p className="text-sm">Progress</p>
-          <span className="text-primary-500 text-sm font-medium">90%</span>
+          <span className="text-primary-500 text-sm font-medium">
+            {progress}%
+          </span>
         </div>
 
         <div className="relative w-full bg-primary-200 h-2 rounded-full mt-1">
           {/* Progress Fill */}
           <div
             className="bg-primary-500 h-2 rounded-full"
-            style={{ width: "90%" }}
+            style={{ width: `${progress}%` }}
           ></div>
 
           {/* Circular Indicator */}
           <div
             className="absolute top-1/2 right-0 -translate-x-1/2 -translate-y-1/2 
                         w-4 h-4 bg-primary-500 border-2 border-white rounded-full shadow-md"
-            style={{ left: "90%" }}
+            style={{ left: `${progress}%` }}
           ></div>
         </div>
       </div>
@@ -53,11 +49,11 @@ const TaskCard = ({ task, className="" }) => {
             aria-hidden="true"
           ></i>
           <span className="text-xs text-secondary-400">
-            {timeAgo(task.createdAt)}
+            {timeAgo(createdAt)}
           </span>
         </div>
         <div className="flex -space-x-2">
-          {avatars.map((avatar, index) => (
+          {assignees.map((avatar, index) => (
             <img
               key={index}
               src={avatar}
