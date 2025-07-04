@@ -31,7 +31,8 @@ function Sidebar() {
 
         {/* Logo */}
         <div className="flex items-center gap-2 mb-10">
-          <img src="src/assets/favicon.svg" alt="Logo" />
+          {/* <img src="src/assets/favicon.svg" alt="Logo" /> */}
+          <img src="/assets/favicon.svg" alt="Logo" />
           <span className="text-3xl font-semibold text-secondary-500">
             Neugas
           </span>
