@@ -13,14 +13,14 @@ const useStorage = (key, defaultValue) => {
     }
   });
 
-  const setStorageValue = (newValue) => {
+  // Sync to localStorage whenever value changes
+  useEffect(() => {
     try {
-      setValue(newValue);
-      localStorage.setItem(key, JSON.stringify(newValue));
+      localStorage.setItem(key, JSON.stringify(value));
     } catch (error) {
       console.error(`Error setting localStorage key "${key}":`, error);
     }
-  };
+  }, [key, value]);
 
   const removeStorageValue = () => {
     try {
@@ -40,7 +40,7 @@ const useStorage = (key, defaultValue) => {
     }
   };
 
-  return [value, setStorageValue, removeStorageValue, clearStorage];
+  return [value, setValue, removeStorageValue, clearStorage];
 };
 
 export default useStorage;
