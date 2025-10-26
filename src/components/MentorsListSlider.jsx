@@ -2,14 +2,14 @@ import Slider from "src/components/slider/Slider";
 import MentorCard from "components/MentorCard";
 import { mentors } from "src/data";
 
-const MonthlyMentors = () => {
+const MentorsListSlider = ({title = "Monthly Mentors"}) => {
   const mentorCard = (mentor) => {
     return <MentorCard mentor={mentor} />;
   };
 
   return (
     <Slider
-      title="Monthly Mentors"
+      title={title}
       data={mentors}
       component={mentorCard}
       itemsPerViewDesktop={2}
@@ -18,4 +18,4 @@ const MonthlyMentors = () => {
   );
 };
 
-export default MonthlyMentors;
+export default MentorsListSlider;

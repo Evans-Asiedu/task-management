@@ -2,7 +2,7 @@ import { data } from "src/data";
 import Slider from "src/components/slider/Slider";
 import TaskCard from "components/TaskCard";
 
-const UpcomingTask = () => {
+const TasksListSlider = ({ title = "" }) => {
   const tasks = data.tasks;
 
   const taskCard = (task) => {
@@ -11,7 +11,7 @@ const UpcomingTask = () => {
 
   return (
     <Slider
-      title="Upcoming Task"
+      title={title}
       data={tasks}
       component={taskCard}
       itemsPerViewDesktop={2}
@@ -20,4 +20,4 @@ const UpcomingTask = () => {
   );
 };
 
-export default UpcomingTask;
+export default TasksListSlider;
