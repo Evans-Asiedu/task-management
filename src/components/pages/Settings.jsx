@@ -4,6 +4,7 @@ import Select from "src/components/ui/Select";
 import Radio from "src/components/ui/Radio";
 import Toggle from "src/components/ui/Toggle";
 import Button from "src/components/ui/Button";
+import Alert from "src/components/ui/Alert";
 import {
   LANGUAGE_OPTIONS,
   TIMEZONE_OPTIONS,
@@ -51,11 +52,9 @@ const Settings = () => {
     try {
       localStorage.setItem("app-settings", JSON.stringify(settings));
       setSaveMessage("General settings saved successfully!");
-      setTimeout(() => setSaveMessage(""), 3000);
     } catch (error) {
       console.error("Error saving general settings:", error);
       setSaveMessage("Error saving settings. Please try again.");
-      setTimeout(() => setSaveMessage(""), 3000);
     }
   };
 
@@ -66,19 +65,26 @@ const Settings = () => {
         JSON.stringify(notificationSettings)
       );
       setSaveMessage("Notification settings saved successfully!");
-      setTimeout(() => setSaveMessage(""), 3000);
     } catch (error) {
       console.error("Error saving notification settings:", error);
       setSaveMessage("Error saving settings. Please try again.");
-      setTimeout(() => setSaveMessage(""), 3000);
     }
   };
 
   return (
     <>
       <Header showActions={false} title="Settings" />
-      <main className="h-full flex bg-n-2">
-        <div className="flex-1 bg-primary-0 mx-6 lg:mx-8 my-6 rounded-r-1">
+
+      <main className="h-full flex bg-n-2 flex-col p-6">
+        {/* Alert */}
+        {saveMessage && (
+          <div className="mb-2">
+            <Alert variant={saveMessage.includes("Error") ? "error" : "success"} onClose={() => setSaveMessage("")}>
+              {saveMessage}
+            </Alert>
+          </div>
+        )}
+        <div className="flex-1 bg-primary-0 rounded-r-1">
           {/* Tab Navigation */}
           <div className="flex border-b border-n-1">
             <button
