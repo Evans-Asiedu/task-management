@@ -1,0 +1,13 @@
+# Project-Specific Cursor Rules
+
+## Communication Style
+- Do NOT create any documentation unless explicitly asked
+- Keep explanations minimal - provide only a bullet list abstract of tasks completed
+- Avoid lengthy explanations after each task
+
+## Code Standards
+- Follow the react development best practices
+- Maintain consistency with existing code structure
+- Use React hooks and functional components
+- Rspect project's design system defined in index.css
+
