@@ -1,9 +1,9 @@
-import UpcomingTask from "components/UpcomingTask";
 import ActivityTracker from "components/ActivityTracker";
 import RunningTask from "components/RunningTask";
 import { Calendar } from "components/Calendar";
 import TodayTask from "components/TodayTask";
-import MonthlyMentors from "components/MonthlyMentors";
+import MentorsListSlider from "components/MentorsListSlider";
+import TasksListSlider from "components/TasksListSlider";
 import Header from "src/components/layout/Header";
 import { data } from "src/data";
 
@@ -25,8 +25,8 @@ const Overview = () => {
               <RunningTask />
               <ActivityTracker />
             </div>
-            <MonthlyMentors />
-            <UpcomingTask />
+            <MentorsListSlider title="Monthly Mentors" />
+            <TasksListSlider title="Upcoming Task" />
           </div>
         </div>
 

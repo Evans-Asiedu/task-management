@@ -1,15 +1,15 @@
 import { data } from "src/data";
 
-const MentorCard = ({ mentor }) => {
-  const { id, name, role, tasks, stars, reviews } = mentor;
+const MentorCardDetailedView = ({ mentor }) => {
+  const { id, name, role, tasks, stars, reviews, bio, avatar } = mentor;
   const { following } = data.loggedInUser;
 
   return (
     <div className="bg-primary-0 rounded-r-1">
-      <div className="h-[140px] flex flex-col justify-between p-4">
+      <div className="flex flex-col justify-between p-4">
         <div className="flex justify-between">
           <div className="flex">
-            <img src="/Profil.png" alt="" className="" />
+            <img src={avatar} alt={name} className="w-10 h-10 rounded-full" />
             <span className="mx-2 self-center">
               <h3 className="font-semibold text-secondary-500">{name}</h3>
               <p className="text-sm text-secondary-400 truncate w-full">
@@ -25,6 +25,8 @@ const MentorCard = ({ mentor }) => {
             {following.includes(id) ? "following" : "+ follow"}
           </button>
         </div>
+
+        <p className="text-secondary-300 text-sm my-3 line-clamp-2">{bio}</p>
         <div className="flex justify-between text-secondary-500 text-sm">
           <span>
             <i className="fa fa-book me-2 inline" aria-hidden="true"></i>
@@ -46,4 +48,4 @@ const MentorCard = ({ mentor }) => {
   );
 };
 
-export default MentorCard;
+export default MentorCardDetailedView;
