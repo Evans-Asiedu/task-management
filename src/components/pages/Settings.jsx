@@ -1,10 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "src/components/layout/Header";
 import Select from "src/components/ui/Select";
 import Radio from "src/components/ui/Radio";
 import Toggle from "src/components/ui/Toggle";
 import Button from "src/components/ui/Button";
-import useStorage from "src/hooks/useStorage";
 import {
   LANGUAGE_OPTIONS,
   TIMEZONE_OPTIONS,
@@ -15,16 +14,64 @@ import {
 
 const Settings = () => {
   const [activeTab, setActiveTab] = useState("general");
-  const [settings, setSettings] = useStorage("app-settings", DEFAULT_SETTINGS);
-  const [notificationSettings, setNotificationSettings] = useStorage(
-    "notification-settings",
+  const [settings, setSettings] = useState(DEFAULT_SETTINGS);
+  const [notificationSettings, setNotificationSettings] = useState(
     DEFAULT_NOTIFICATION_SETTINGS
   );
+  const [saveMessage, setSaveMessage] = useState("");
 
-  const handleSave = () => {
-    console.log("Settings saved:", settings);
-    console.log("Notification settings saved:", notificationSettings);
-    // Settings are automatically saved via useStorage hook
+  // Load settings from localStorage on component mount
+  useEffect(() => {
+    try {
+      const savedSettings = localStorage.getItem("app-settings");
+      if (
+        savedSettings &&
+        savedSettings !== "undefined" &&
+        savedSettings !== "null"
+      ) {
+        setSettings(JSON.parse(savedSettings));
+      }
+
+      const savedNotificationSettings = localStorage.getItem(
+        "notification-settings"
+      );
+      if (
+        savedNotificationSettings &&
+        savedNotificationSettings !== "undefined" &&
+        savedNotificationSettings !== "null"
+      ) {
+        setNotificationSettings(JSON.parse(savedNotificationSettings));
+      }
+    } catch (error) {
+      console.error("Error loading settings from localStorage:", error);
+    }
+  }, []);
+
+  const handleSaveGeneral = () => {
+    try {
+      localStorage.setItem("app-settings", JSON.stringify(settings));
+      setSaveMessage("General settings saved successfully!");
+      setTimeout(() => setSaveMessage(""), 3000);
+    } catch (error) {
+      console.error("Error saving general settings:", error);
+      setSaveMessage("Error saving settings. Please try again.");
+      setTimeout(() => setSaveMessage(""), 3000);
+    }
+  };
+
+  const handleSaveNotification = () => {
+    try {
+      localStorage.setItem(
+        "notification-settings",
+        JSON.stringify(notificationSettings)
+      );
+      setSaveMessage("Notification settings saved successfully!");
+      setTimeout(() => setSaveMessage(""), 3000);
+    } catch (error) {
+      console.error("Error saving notification settings:", error);
+      setSaveMessage("Error saving settings. Please try again.");
+      setTimeout(() => setSaveMessage(""), 3000);
+    }
   };
 
   return (
@@ -79,7 +126,7 @@ const Settings = () => {
                 />
 
                 <Radio
-                  label="Timezone"
+                  label="Time Format"
                   options={TIME_FORMAT_OPTIONS}
                   value={settings.timeFormat}
                   onChange={(value) =>
@@ -168,7 +215,11 @@ const Settings = () => {
             {/* Save Button */}
             <div className="mt-8 pt-6 border-t border-n-1">
               <Button
-                onClick={handleSave}
+                onClick={
+                  activeTab === "general"
+                    ? handleSaveGeneral
+                    : handleSaveNotification
+                }
                 className="bg-primary-500 text-primary-0 border-primary-500 hover:bg-primary-600 hover:border-primary-600"
               >
                 Save Changes
