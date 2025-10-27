@@ -1,8 +1,8 @@
 import Slider from "src/components/slider/Slider";
-import MentorCard from "components/MentorCard";
+import MentorCard from "src/components/cards/MentorCard";
 import { mentors } from "src/data";
 
-const MentorsListSlider = ({title = "Monthly Mentors"}) => {
+const MentorsListSlider = ({ title = "Monthly Mentors" }) => {
   const mentorCard = (mentor) => {
     return <MentorCard mentor={mentor} />;
   };

@@ -234,7 +234,7 @@ export const mentors = [
     stars: 4.7,
     reviews: 750,
     bio: "Hi, I'm Jessica Jane. I am a doctoral student at Harvard University majoring in Web Development. I specialize in modern JavaScript frameworks and full-stack development.",
-    avatar: "/avatar1.png",
+    avatar: "/photo8.png",
     dateJoined: "2024-01-15",
   },
   {
@@ -250,7 +250,7 @@ export const mentors = [
     stars: 4.9,
     reviews: 970,
     bio: "Hi, I'm Alex Stanton. I am a doctoral student at Oxford University majoring in UI/UX Design. I focus on creating intuitive and beautiful user experiences.",
-    avatar: "/avatar2.png",
+    avatar: "/photo.png",
     dateJoined: "2023-11-20",
   },
   {
@@ -265,7 +265,7 @@ export const mentors = [
     stars: 4.8,
     reviews: 830,
     bio: "Hi, I'm Antoine Griezmann. I'm an Android Developer at Google company. I specialize in native Android development and Kotlin programming.",
-    avatar: "/avatar3.png",
+    avatar: "/photo.png",
     dateJoined: "2024-02-01",
   },
   {
@@ -281,7 +281,7 @@ export const mentors = [
     stars: 4.8,
     reviews: 870,
     bio: "Hi, I'm Anna White. I'm a professional 3D Designer at Blender company. I create stunning 3D models and animations for various industries.",
-    avatar: "/avatar4.png",
+    avatar: "/photo2.png",
     dateJoined: "2024-03-10",
   },
   {
@@ -297,7 +297,7 @@ export const mentors = [
     stars: 4.7,
     reviews: 730,
     bio: "Hi, I'm Richard Kyle. I'm a professional 2D Designer at Photoshop company. I specialize in graphic design and digital illustration.",
-    avatar: "/avatar5.png",
+    avatar: "/photo3.png",
     dateJoined: "2023-12-01",
   },
   {
@@ -313,7 +313,7 @@ export const mentors = [
     stars: 4.9,
     reviews: 910,
     bio: "Hi, I'm Julia Philips. I'm a senior manager at Apple company. I lead iOS development teams and create innovative mobile applications.",
-    avatar: "/avatar1.png",
+    avatar: "/photo4.png",
     dateJoined: "2024-01-25",
   },
   {
@@ -328,7 +328,7 @@ export const mentors = [
     stars: 4.3,
     reviews: 15,
     bio: "DevOps engineer specializing in automation and cloud infrastructure.",
-    avatar: "/avatar2.png",
+    avatar: "/photo5.png",
     dateJoined: "2024-02-15",
   },
   {
@@ -343,7 +343,7 @@ export const mentors = [
     stars: 4.8,
     reviews: 40,
     bio: "Cybersecurity expert dedicated to protecting digital assets and data.",
-    avatar: "/avatar3.png",
+    avatar: "/photo6.png",
     dateJoined: "2023-11-10",
   },
   {
@@ -357,7 +357,7 @@ export const mentors = [
     stars: 4.5,
     reviews: 25,
     bio: "AI/ML researcher focused on developing innovative machine learning solutions.",
-    avatar: "/avatar4.png",
+    avatar: "/photo7.png",
     dateJoined: "2024-03-01",
   },
 ];

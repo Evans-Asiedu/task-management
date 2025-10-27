@@ -1,5 +1,5 @@
 import Header from "src/components/layout/Header";
-import MentorCardDetailedView from "src/components/MentorCardDetailedView";
+import MentorCardDetailedView from "src/components/cards/MentorCardDetailedView";
 import { mentors } from "src/data";
 import MentorsListSlider from "src/components/MentorsListSlider";
 
@@ -16,7 +16,7 @@ const Mentors = () => {
 
           <div>
             <h2 className="text-lg font-semibold mb-3">Mentors</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
               {featuredMentors.map((mentor) => (
                 <MentorCardDetailedView key={mentor.id} mentor={mentor} />
               ))}

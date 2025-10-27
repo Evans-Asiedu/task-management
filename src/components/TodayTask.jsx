@@ -1,5 +1,5 @@
 import React from "react";
-import TaskCard from "components/TaskCard";
+import TaskCard from "src/components/cards/TaskCard";
 import TaskDetails from "components/TaskDetails";
 import { data } from "src/data";
 
@@ -9,7 +9,7 @@ const TodayTask = () => {
   return (
     <div className="bg-primary-0 rounded-r-1 p-6">
       <TaskHeader name="Today Task" />
-      <TaskCard task={task} className="!p-0 "/>
+      <TaskCard task={task} className="!p-0 " />
       <div className="border-b border-secondary-100 my-6"></div>
       <TaskDetails />
     </div>
