@@ -2,11 +2,11 @@ import { useParams } from "react-router-dom";
 import Header from "src/components/layout/Header";
 import VideoPlayer from "src/components/VideoPlayer";
 import AssignedAssignments from "src/components/AssignedAssignments";
-import { taskDetails } from "src/data";
+import { data } from "src/data";
 
 const TaskDetail = () => {
   const { id } = useParams();
-  const task = taskDetails[id];
+  const task = data.tasks.find((t) => t.id === parseInt(id));
 
   if (!task) {
     return (

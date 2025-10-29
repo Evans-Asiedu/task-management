@@ -1,10 +1,20 @@
 import { timeAgo } from "src/utils/formatDate";
+import { useNavigate } from "react-router-dom";
 
 const TaskCard = ({ task, className = "" }) => {
-  const { title, imageUrl, category, progress, createdAt, assignees } = task;
+  const { id, title, imageUrl, category, progress, createdAt, assignees } =
+    task;
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/tasks/${id}`);
+  };
 
   return (
-    <div className={`bg-primary-0 rounded-r-1 p-4 ${className}`}>
+    <div
+      className={`bg-primary-0 rounded-r-1 p-4 cursor-pointer ${className}`}
+      onClick={handleClick}
+    >
       {/* Image Section */}
       <img
         src={imageUrl}
