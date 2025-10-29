@@ -1,6 +1,6 @@
 import { data } from "src/data";
 
-const MentorCardDetailedView = ({ mentor }) => {
+const MentorCardDetailed = ({ mentor }) => {
   const { id, name, role, tasks, stars, reviews, bio, avatar } = mentor;
   const { following } = data.loggedInUser;
 
@@ -48,4 +48,4 @@ const MentorCardDetailedView = ({ mentor }) => {
   );
 };
 
-export default MentorCardDetailedView;
+export default MentorCardDetailed;
