@@ -1,3 +1,5 @@
+import TodayTask from "./components/TodayTask";
+
 export const data = {
   loggedInUser: {
     id: 12345,
@@ -626,30 +628,34 @@ export const activityTracker = {
   ],
 };
 
-export const taskDetails = {
-  1: {
-    id: 1,
-    title: "Creating Mobile App Wireframes with Figma",
-    categories: ["UI/UX Design", "Mobile Design"],
-    videoUrl: "/video-placeholder.mp4",
-    thumbnail: "/Image.png",
-    duration: "10:00",
-    currentTime: "2:20",
-    studentsInvolved: 200,
-    durationHours: 1,
-    description:
-      "Follow the video tutorial above. Learn how to use Figma tools effectively for mobile app design. Understand design principles including spacing, typography, content hierarchy, and responsive design. Apply these concepts to create professional wireframes for mobile applications.",
-    assessment: [
-      "Master Figma interface and core tools",
-      "Understand mobile design principles and patterns",
-      "Create comprehensive wireframe designs",
-      "Present design solutions to mentor for feedback",
-    ],
-    student: {
-      name: "Sarah Chen",
-      class: "UI/UX Design Fundamentals",
-      number: "10",
-    },
-    lastModified: "1 July 2022",
+export const TodayTaskData = {
+  id: 1,
+  createdAt: "2025-03-06T08:45:00Z",
+  imageUrl: "/Image.png",
+  category: "UI/UX Design",
+  tag: "Urgent",
+  title: "Create Mobile App Wireframes",
+  description:
+    "Design comprehensive wireframes for a mobile e-commerce application using Figma. Focus on user flow, navigation patterns, and responsive design principles.",
+  assignees: ["/avatar4.png", "/avatar5.png"],
+  progress: 50,
+  // Detail parameters
+  thumbnail: "/Image.png",
+  duration: "15:30",
+  currentTime: "5:20",
+  studentsInvolved: 25,
+  durationHours: 2,
+  categories: ["UI/UX Design", "Mobile Design"],
+  assessment: [
+    "Create low-fidelity wireframes for all main screens",
+    "Design user flow diagrams for key user journeys",
+    "Implement responsive design principles",
+    "Present wireframes to mentor for feedback",
+  ],
+  student: {
+    name: "Sarah Chen",
+    class: "UI/UX Design Fundamentals",
+    number: "1",
   },
+  lastModified: "6 March 2025",
 };

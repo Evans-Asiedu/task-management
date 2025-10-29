@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 
-const VideoPlayer = () => {
+const VideoPlayer = ({ thumbnail }) => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
@@ -80,7 +80,7 @@ const VideoPlayer = () => {
         <video
           ref={videoRef}
           className="w-full h-full object-cover"
-          poster="/video-cover.png"
+          poster={thumbnail}
           preload="metadata"
         >
           <source src="/video-smaple.mp4" type="video/mp4" />

@@ -1,5 +1,5 @@
-import { timeAgo } from "src/utils/formatDate";
 import { useNavigate } from "react-router-dom";
+import { displayTime } from "src/utils/formatDate";
 
 const TaskCard = ({ task, className = "" }) => {
   const { id, title, imageUrl, category, progress, createdAt, assignees } =
@@ -58,19 +58,18 @@ const TaskCard = ({ task, className = "" }) => {
             className="fa fa-clock-o fa-lg text-secondary-400"
             aria-hidden="true"
           ></i>
-          <span className="text-xs text-secondary-400">
-            {timeAgo(createdAt)}
-          </span>
+          <span className="text-xs text-secondary-400">{displayTime(createdAt)}</span>
         </div>
         <div className="flex -space-x-2">
-          {assignees.map((avatar, index) => (
-            <img
-              key={index}
-              src={avatar}
-              className="rounded-full border border-primary-0"
-              alt={`Team member ${index + 1}`}
-            />
-          ))}
+          {assignees?.length > 0 &&
+            assignees.map((avatar, index) => (
+              <img
+                key={index}
+                src={avatar}
+                className="rounded-full border border-primary-0"
+                alt={`Team member ${index + 1}`}
+              />
+            ))}
         </div>
       </div>
     </div>
