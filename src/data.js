@@ -388,3 +388,31 @@ export const activityTracker = {
     { day: "S", tasks: 1 },
   ],
 };
+
+export const taskDetails = {
+  1: {
+    id: 1,
+    title: "Creating Awesome Mobile Apps",
+    categories: ["UI UX Design", "Apps Design"],
+    videoUrl: "/video-placeholder.mp4",
+    thumbnail: "/Image.png",
+    duration: "10:00",
+    currentTime: "2:20",
+    studentsInvolved: 200,
+    durationHours: 1,
+    description:
+      "Follow the video tutorial above. Understand how to use each tool in the Figma application. Also learn how to make a good and correct design. Starting from spacing, typography, content, and many other design hierarchies. Then try to make it yourself with your imagination and inspiration.",
+    assessment: [
+      "Understanding the tools in Figma",
+      "Understand the basics of making designs",
+      "Designing a mobile application using figma",
+      "Presenting the design flow",
+    ],
+    student: {
+      name: "Skylar Dias",
+      class: "MIPA 2",
+      number: "10",
+    },
+    lastModified: "1 July 2022",
+  },
+};
