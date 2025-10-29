@@ -1,18 +1,18 @@
 import { data } from "src/data";
 
-const MentorCardDetailedView = ({ mentor }) => {
+const MentorCardDetailed = ({ mentor }) => {
   const { id, name, role, tasks, stars, reviews, bio, avatar } = mentor;
   const { following } = data.loggedInUser;
 
   return (
     <div className="bg-primary-0 rounded-r-1">
-      <div className="flex flex-col justify-between p-4">
+      <div className="flex flex-col justify-between p-5">
         <div className="flex justify-between">
           <div className="flex">
             <img src={avatar} alt={name} className="w-10 h-10 rounded-full" />
             <span className="mx-2 self-center">
               <h3 className="font-semibold text-secondary-500">{name}</h3>
-              <p className="text-sm text-secondary-400 truncate w-full">
+              <p className="text-xs text-secondary-400 truncate w-full">
                 {role}
               </p>
             </span>
@@ -26,7 +26,7 @@ const MentorCardDetailedView = ({ mentor }) => {
           </button>
         </div>
 
-        <p className="text-secondary-300 text-sm my-3 line-clamp-2">{bio}</p>
+        <p className="text-secondary-300 text-sm my-5 line-clamp-2 leading-relaxed">{bio}</p>
         <div className="flex justify-between text-secondary-500 text-sm">
           <span>
             <i className="fa fa-book me-2 inline" aria-hidden="true"></i>
@@ -48,4 +48,4 @@ const MentorCardDetailedView = ({ mentor }) => {
   );
 };
 
-export default MentorCardDetailedView;
+export default MentorCardDetailed;

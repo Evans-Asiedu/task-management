@@ -1,6 +1,6 @@
 import { data } from "src/data";
 import Slider from "src/components/slider/Slider";
-import TaskCard from "components/TaskCard";
+import TaskCard from "src/components/cards/TaskCard";
 
 const TasksListSlider = ({ title = "" }) => {
   const tasks = data.tasks;
