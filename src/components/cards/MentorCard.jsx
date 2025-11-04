@@ -1,5 +1,6 @@
 import useStorage from "src/hooks/useStorage";
 import { data } from "src/data";
+import { useToast } from "src/context/ToastContext";
 
 const MentorCard = ({ mentor }) => {
   const { id, name, role, tasks, stars, reviews, avatar } = mentor;
@@ -7,17 +8,20 @@ const MentorCard = ({ mentor }) => {
     "following",
     data.loggedInUser.following
   );
+  const { showToast } = useToast();
   const isFollowing = following.includes(id);
 
   const handleFollowToggle = (e) => {
     e.stopPropagation();
-    setFollowing((prevFollowing) => {
-      if (prevFollowing.includes(id)) {
-        return prevFollowing.filter((mentorId) => mentorId !== id);
-      } else {
-        return [...prevFollowing, id];
-      }
-    });
+    if (isFollowing) {
+      showToast(`Unfollowed ${name}`, "info");
+      setFollowing((prevFollowing) =>
+        prevFollowing.filter((mentorId) => mentorId !== id)
+      );
+    } else {
+      showToast(`Now following ${name}`, "success");
+      setFollowing((prevFollowing) => [...prevFollowing, id]);
+    }
   };
 
   return (

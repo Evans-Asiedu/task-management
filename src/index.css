@@ -65,7 +65,7 @@
   --color-secondary-100: #dfe1f3;
 
   --color-n-1: #f5f5f7;
-  --color-n-2: #FAFAFA;
+  --color-n-2: #fafafa;
   --radius-r-1: 10px;
 
   --font-jakarta: "Plus Jakarta Sans", sans-serif;
@@ -80,7 +80,7 @@
   --rdp-weekday-opacity: 1;
 }
 .rdp-months {
-  margin: 0 auto
+  margin: 0 auto;
 }
 .rdp-month_caption {
   align-items: center;
@@ -104,4 +104,19 @@
 .rdp-weekday {
   font-size: 12px;
   color: var(--color-secondary-500);
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
 }
