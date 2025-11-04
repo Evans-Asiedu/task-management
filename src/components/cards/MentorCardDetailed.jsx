@@ -1,8 +1,24 @@
+import useStorage from "src/hooks/useStorage";
 import { data } from "src/data";
 
 const MentorCardDetailed = ({ mentor }) => {
   const { id, name, role, tasks, stars, reviews, bio, avatar } = mentor;
-  const { following } = data.loggedInUser;
+  const [following, setFollowing] = useStorage(
+    "following",
+    data.loggedInUser.following
+  );
+  const isFollowing = following.includes(id);
+
+  const handleFollowToggle = (e) => {
+    e.stopPropagation();
+    setFollowing((prevFollowing) => {
+      if (prevFollowing.includes(id)) {
+        return prevFollowing.filter((mentorId) => mentorId !== id);
+      } else {
+        return [...prevFollowing, id];
+      }
+    });
+  };
 
   return (
     <div className="bg-primary-0 rounded-r-1">
@@ -18,15 +34,18 @@ const MentorCardDetailed = ({ mentor }) => {
             </span>
           </div>
           <button
+            onClick={handleFollowToggle}
             className={`cursor-pointer hover:text-primary-300  ${
-              following.includes(id) ? "text-secondary-400" : "text-primary-500"
+              isFollowing ? "text-secondary-400" : "text-primary-500"
             }`}
           >
-            {following.includes(id) ? "following" : "+ follow"}
+            {isFollowing ? "following" : "+ follow"}
           </button>
         </div>
 
-        <p className="text-secondary-300 text-sm my-5 line-clamp-2 leading-relaxed">{bio}</p>
+        <p className="text-secondary-300 text-sm my-5 line-clamp-2 leading-relaxed">
+          {bio}
+        </p>
         <div className="flex justify-between text-secondary-500 text-sm">
           <span>
             <i className="fa fa-book me-2 inline" aria-hidden="true"></i>
