@@ -7,6 +7,7 @@ import Settings from "components/pages/Settings";
 import NotFound from "components/pages/NotFound";
 import { SidebarProvider } from "src/context/SidebarContext";
 import { ToastProvider } from "src/context/ToastContext";
+import { SearchProvider } from "src/context/SearchContext";
 import MainLayout from "./components/layout/MainLayout";
 
 function App() {
@@ -15,16 +16,18 @@ function App() {
       <BrowserRouter>
         <SidebarProvider>
           <ToastProvider>
-            <Routes>
-              <Route element={<MainLayout />}>
-                <Route path="/" element={<Overview />} />
-                <Route path="/tasks" element={<Tasks />} />
-                <Route path="/tasks/:id" element={<TaskDetail />} />
-                <Route path="/mentors" element={<Mentors />} />
-                <Route path="/settings" element={<Settings />} />
-                <Route path="*" element={<NotFound />} />
-              </Route>
-            </Routes>
+            <SearchProvider>
+              <Routes>
+                <Route element={<MainLayout />}>
+                  <Route path="/" element={<Overview />} />
+                  <Route path="/tasks" element={<Tasks />} />
+                  <Route path="/tasks/:id" element={<TaskDetail />} />
+                  <Route path="/mentors" element={<Mentors />} />
+                  <Route path="/settings" element={<Settings />} />
+                  <Route path="*" element={<NotFound />} />
+                </Route>
+              </Routes>
+            </SearchProvider>
           </ToastProvider>
         </SidebarProvider>
       </BrowserRouter>

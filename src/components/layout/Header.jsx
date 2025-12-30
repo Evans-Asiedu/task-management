@@ -2,6 +2,7 @@ import Button from "components/ui/Button";
 import NotificationsButton from "src/components/NotificationsButton";
 import ProfileButton from "src/components/ProfileButton";
 import { useSidebar } from "src/context/SidebarContext";
+import { useSearch } from "src/context/SearchContext";
 
 const HeaderMain = ({ title, subText = "" }) => {
   const { isOpen, setIsOpen } = useSidebar();
@@ -39,6 +40,8 @@ const HeaderMain = ({ title, subText = "" }) => {
 };
 
 const HeaderActionBar = () => {
+  const { searchQuery, setSearchQuery } = useSearch();
+
   return (
     <div className="flex justify-between items-center gap-3">
       {/* search box */}
@@ -46,6 +49,8 @@ const HeaderActionBar = () => {
         <input
           type="text"
           placeholder="Search..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
           className="bg-transparent outline-none w-full text-secondary-400 text-xs"
         />
         <i className="fa fa-search text-secondary-300"></i>
