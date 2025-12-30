@@ -39,7 +39,7 @@ const HeaderMain = ({ title, subText = "" }) => {
   );
 };
 
-const HeaderActionBar = () => {
+const HeaderActionBar = ({ searchPlaceholder = "Search..." }) => {
   const { searchQuery, setSearchQuery } = useSearch();
 
   return (
@@ -48,7 +48,7 @@ const HeaderActionBar = () => {
       <div className="flex items-center gap-2 bg-primary-0 border border-n-1 py-3.5 px-6 w-full md:w-[320px] h-[52px] rounded-r-1">
         <input
           type="text"
-          placeholder="Search..."
+          placeholder={searchPlaceholder}
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="bg-transparent outline-none w-full text-secondary-400 text-xs"
@@ -90,6 +90,7 @@ const Header = ({
   subText = "",
   title = "",
   className = "",
+  searchPlaceholder = "Search...",
 }) => {
   return (
     <header
@@ -103,7 +104,7 @@ const Header = ({
         isSidebarOpen={isSidebarOpen}
         setIsSidebarOpen={setIsSidebarOpen}
       />
-      {showActions && <HeaderActionBar />}
+      {showActions && <HeaderActionBar searchPlaceholder={searchPlaceholder} />}
     </header>
   );
 };

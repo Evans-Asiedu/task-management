@@ -27,7 +27,7 @@ const Mentors = () => {
 
   return (
     <>
-      <Header showActions={true} title="Mentors" />
+      <Header showActions={true} title="Mentors" searchPlaceholder="Search mentors" />
       <main className="h-full flex bg-n-2">
         <div className="p-6 lg:p-8 w-full space-y-6">
           <MentorsListSlider title="Recent Mentors" mentors={filteredMentors} />

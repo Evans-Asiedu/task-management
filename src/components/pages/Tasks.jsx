@@ -23,7 +23,11 @@ const Tasks = () => {
 
   return (
     <>
-      <Header showActions={true} title="Tasks" />
+      <Header
+        showActions={true}
+        title="Tasks"
+        searchPlaceholder="Search tasks"
+      />
       <main className="h-full flex bg-n-2 ">
         <div className="p-6 lg:p-8 space-y-6 lg:space-y-8">
           <TasksListSlider title="Time Limit" tasks={filteredTasks} />
