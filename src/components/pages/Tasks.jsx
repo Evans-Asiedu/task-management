@@ -29,7 +29,7 @@ const Tasks = () => {
         searchPlaceholder="Search tasks"
       />
       <main className="h-full flex bg-n-2 ">
-        <div className="p-6 lg:p-8 space-y-6 lg:space-y-8">
+        <div className="p-6 lg:p-8 w-full space-y-6">
           <TasksSwiper tasks={filteredTasks} headerLabel="Time Limit" />
           <TasksSwiper tasks={filteredTasks} headerLabel="New Task" />
         </div>
