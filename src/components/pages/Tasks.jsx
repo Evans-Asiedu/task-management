@@ -1,5 +1,5 @@
 import Header from "src/components/layout/Header";
-import TasksListSlider from "components/TasksListSlider";
+import TasksSwiper from "src/components/swipers/TasksSwiper";
 import { useSearch } from "src/context/SearchContext";
 import { data } from "src/data";
 import { useMemo } from "react";
@@ -30,8 +30,8 @@ const Tasks = () => {
       />
       <main className="h-full flex bg-n-2 ">
         <div className="p-6 lg:p-8 space-y-6 lg:space-y-8">
-          <TasksListSlider title="Time Limit" tasks={filteredTasks} />
-          <TasksListSlider title="New Task" tasks={filteredTasks} />
+          <TasksSwiper tasks={filteredTasks} headerLabel="Time Limit" />
+          <TasksSwiper tasks={filteredTasks} headerLabel="New Task" />
         </div>
       </main>
     </>

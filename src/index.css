@@ -120,3 +120,33 @@
 .animate-slide-in {
   animation: slide-in 0.3s ease-out;
 }
+
+.swiper-slide {
+  width: 400px !important;
+}
+
+/* Swiper Navigation Styles */
+.mentors-swiper-button-prev,
+.mentors-swiper-button-next,
+.tasks-swiper-button-prev,
+.tasks-swiper-button-next {
+  background: none;
+  border: none;
+  padding: 0;
+  outline: none;
+}
+
+.mentors-swiper-button-prev:disabled,
+.mentors-swiper-button-next:disabled,
+.tasks-swiper-button-prev:disabled,
+.tasks-swiper-button-next:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.mentors-swiper-button-prev:not(:disabled):hover,
+.mentors-swiper-button-next:not(:disabled):hover,
+.tasks-swiper-button-prev:not(:disabled):hover,
+.tasks-swiper-button-next:not(:disabled):hover {
+  color: var(--color-secondary-500);
+}

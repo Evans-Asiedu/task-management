@@ -2,8 +2,8 @@ import ActivityTracker from "components/ActivityTracker";
 import RunningTask from "components/RunningTask";
 import { Calendar } from "components/Calendar";
 import TodayTask from "components/TodayTask";
-import MentorsListSlider from "components/MentorsListSlider";
-import TasksListSlider from "components/TasksListSlider";
+import MentorsSwiper from "src/components/swipers/MentorsSwiper";
+import TasksSwiper from "src/components/swipers/TasksSwiper";
 import Header from "src/components/layout/Header";
 import { data } from "src/data";
 
@@ -12,7 +12,7 @@ const Overview = () => {
   return (
     <>
       <main className="h-full flex">
-        <div className="flex-grow bg-n-2">
+        <div className="flex-grow bg-n-2 max-w-[calc(100dvw-624px)]">
           <Header
             showActions={false}
             title={`Hi ${currentUserName}`}
@@ -25,8 +25,8 @@ const Overview = () => {
               <RunningTask />
               <ActivityTracker />
             </div>
-            <MentorsListSlider title="Monthly Mentors" />
-            <TasksListSlider title="Upcoming Task" />
+            <MentorsSwiper mentors={data.mentors} headerLabel="Monthly Mentors" />
+            <TasksSwiper tasks={data.tasks} headerLabel="Upcoming Task" />
           </div>
         </div>
 

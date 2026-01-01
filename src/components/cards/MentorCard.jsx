@@ -25,7 +25,7 @@ const MentorCard = ({ mentor }) => {
   };
 
   return (
-    <div className="bg-primary-0 rounded-r-1">
+    <div className="bg-primary-0 rounded-r-1 w-[400px]">
       <div className="h-[140px] flex flex-col justify-between p-4">
         <div className="flex justify-between">
           <div className="flex">

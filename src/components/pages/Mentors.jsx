@@ -1,9 +1,9 @@
 import Header from "src/components/layout/Header";
 import MentorCardDetailed from "src/components/cards/MentorCardDetailed";
 import { mentors } from "src/data";
-import MentorsListSlider from "src/components/MentorsListSlider";
 import { useSearch } from "src/context/SearchContext";
 import { useMemo } from "react";
+import MentorsSwiper from "src/components/swipers/MentorsSwiper";
 
 const Mentors = () => {
   const { searchQuery } = useSearch();
@@ -30,8 +30,7 @@ const Mentors = () => {
       <Header showActions={true} title="Mentors" searchPlaceholder="Search mentors" />
       <main className="h-full flex bg-n-2">
         <div className="p-6 lg:p-8 w-full space-y-6">
-          <MentorsListSlider title="Recent Mentors" mentors={filteredMentors} />
-
+          <MentorsSwiper mentors={filteredMentors} headerLabel={"Recent Mentors"}/>
           <div>
             <h2 className="text-lg font-semibold mb-3">Mentors</h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
