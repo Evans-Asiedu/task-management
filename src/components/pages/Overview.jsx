@@ -11,8 +11,8 @@ const Overview = () => {
   const currentUserName = data.loggedInUser.name;
   return (
     <>
-      <main className="h-full flex">
-        <div className="flex-grow bg-n-2 max-w-[calc(100dvw-624px)]">
+      <main className="h-full flex w-full">
+        <div className="flex-grow bg-n-2 max-w-[calc(100dvw-252px)] xl:max-w-[calc(100dvw-624px)]">
           <Header
             showActions={false}
             title={`Hi ${currentUserName}`}
@@ -25,7 +25,10 @@ const Overview = () => {
               <RunningTask />
               <ActivityTracker />
             </div>
-            <MentorsSwiper mentors={data.mentors} headerLabel="Monthly Mentors" />
+            <MentorsSwiper
+              mentors={data.mentors}
+              headerLabel="Monthly Mentors"
+            />
             <TasksSwiper tasks={data.tasks} headerLabel="Upcoming Task" />
           </div>
         </div>

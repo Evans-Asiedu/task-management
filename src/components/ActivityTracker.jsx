@@ -10,8 +10,6 @@ import {
 
 import { activityTracker } from "src/data";
 
-
-
 // Custom Tooltip Component
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
@@ -31,7 +29,6 @@ const ActivityTracker = () => {
   const [xAxisInterval, setXAxisInterval] = useState(0); // Control Y-axis interval
   const chartContainerRef = useRef(null);
   const [range, setRange] = useState("week");
-
 
   // Track chart container width and adjust Y-axis interval
   useEffect(() => {
@@ -69,7 +66,6 @@ const ActivityTracker = () => {
           <select
             onChange={(e) => setRange(e.target.value)}
             className=" w-full border-none outline-none text-xs p-2 rounded-r-1 text-secondary-500"
-
           >
             <option value="week">This Week</option>
             <option value="today">Today</option>
