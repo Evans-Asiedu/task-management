@@ -609,22 +609,22 @@ export const runningTasks = {
 
 export const activityTracker = {
   today: [
-    { day: "S", tasks: 1 },
-    { day: "M", tasks: 2 },
-    { day: "T", tasks: 1 },
-    { day: "W", tasks: 2 },
-    { day: "T", tasks: 3 },
-    { day: "F", tasks: 2 },
-    { day: "S", tasks: 2 },
+    { id: "today-0", day: "S", tasks: 1 },
+    { id: "today-1", day: "M", tasks: 2 },
+    { id: "today-2", day: "T", tasks: 1 },
+    { id: "today-3", day: "W", tasks: 2 },
+    { id: "today-4", day: "T", tasks: 3 },
+    { id: "today-5", day: "F", tasks: 2 },
+    { id: "today-6", day: "S", tasks: 2 },
   ],
   week: [
-    { day: "S", tasks: 3 },
-    { day: "M", tasks: 2 },
-    { day: "T", tasks: 3 },
-    { day: "W", tasks: 1 },
-    { day: "T", tasks: 3 },
-    { day: "F", tasks: 2 },
-    { day: "S", tasks: 1 },
+    { id: "week-0", day: "S", tasks: 3 },
+    { id: "week-1", day: "M", tasks: 2 },
+    { id: "week-2", day: "T", tasks: 3 },
+    { id: "week-3", day: "W", tasks: 1 },
+    { id: "week-4", day: "T", tasks: 3 },
+    { id: "week-5", day: "F", tasks: 2 },
+    { id: "week-6", day: "S", tasks: 1 },
   ],
 };
 

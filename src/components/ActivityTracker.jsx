@@ -80,6 +80,7 @@ const ActivityTracker = () => {
       <div className="pt-6 pb-4 pr-6 w-full h-[150px] bg-primary-0 rounded-r-1">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart
+            key={range}
             data={activityTracker[range]}
             margin={{ top: 10, right: 10 }}
             onMouseMove={(e) => {
