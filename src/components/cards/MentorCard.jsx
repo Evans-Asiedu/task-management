@@ -6,7 +6,7 @@ const MentorCard = ({ mentor }) => {
   const { id, name, role, tasks, stars, reviews, avatar } = mentor;
   const [following, setFollowing] = useStorage(
     "following",
-    data.loggedInUser.following
+    data.loggedInUser.following,
   );
   const { showToast } = useToast();
   const isFollowing = following.includes(id);
@@ -16,7 +16,7 @@ const MentorCard = ({ mentor }) => {
     if (isFollowing) {
       showToast(`Unfollowed ${name}`, "info");
       setFollowing((prevFollowing) =>
-        prevFollowing.filter((mentorId) => mentorId !== id)
+        prevFollowing.filter((mentorId) => mentorId !== id),
       );
     } else {
       showToast(`Now following ${name}`, "success");
@@ -25,7 +25,7 @@ const MentorCard = ({ mentor }) => {
   };
 
   return (
-    <div className="bg-primary-0 rounded-r-1 w-[400px]">
+    <div className="bg-primary-0 rounded-r-1 w-[90%] md:w-[100%]">
       <div className="h-[140px] flex flex-col justify-between p-4">
         <div className="flex justify-between">
           <div className="flex">

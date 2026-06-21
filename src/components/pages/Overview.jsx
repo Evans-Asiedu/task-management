@@ -12,7 +12,7 @@ const Overview = () => {
   return (
     <>
       <main className="h-full flex w-full">
-        <div className="flex-grow bg-n-2 max-w-[calc(100dvw-252px)] xl:max-w-[calc(100dvw-624px)]">
+        <div className="flex-grow bg-n-2 w-full lg:max-w-[calc(100dvw-252px)] xl:max-w-[calc(100dvw-624px)]">
           <Header
             showActions={false}
             title={`Hi ${currentUserName}`}

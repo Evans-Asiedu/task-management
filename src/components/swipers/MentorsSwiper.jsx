@@ -27,7 +27,7 @@ const MentorsSwiper = ({ mentors: mentorsProp, headerLabel }) => {
           nextEl: ".mentors-swiper-wrapper .mentors-swiper-button-next",
           prevEl: ".mentors-swiper-wrapper .mentors-swiper-button-prev",
         }}
-        spaceBetween={16}
+        spaceBetween={8}
         slidesPerView="auto"
         className="mentors-swiper"
       >

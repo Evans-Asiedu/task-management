@@ -12,7 +12,7 @@ const TaskCard = ({ task, className = "" }) => {
 
   return (
     <div
-      className={`bg-primary-0 rounded-r-1 p-4 cursor-pointer ${className}`}
+      className={`w-[90%] md:w-[100%]bg-primary-0 rounded-r-1 p-4 cursor-pointer ${className}`}
       onClick={handleClick}
     >
       {/* Image Section */}
@@ -58,7 +58,9 @@ const TaskCard = ({ task, className = "" }) => {
             className="fa fa-clock-o fa-lg text-secondary-400"
             aria-hidden="true"
           ></i>
-          <span className="text-xs text-secondary-400">{displayTime(createdAt)}</span>
+          <span className="text-xs text-secondary-400">
+            {displayTime(createdAt)}
+          </span>
         </div>
         <div className="flex -space-x-2">
           {assignees?.length > 0 &&
